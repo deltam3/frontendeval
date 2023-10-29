@@ -1,0 +1,17 @@
+.item {
+  border: 2px solid black;
+  display: flex;
+  gap: 2.4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+svg {
+  font-size: 3rem;
+}
