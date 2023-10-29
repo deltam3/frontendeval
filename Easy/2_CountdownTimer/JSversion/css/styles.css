@@ -1,0 +1,29 @@
+.section-timer {
+  padding: 9.6rem 0;
+}
+
+.input-output-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.hour-input,
+.minute-input,
+.second-input {
+  height: 3.6rem;
+  text-align: center;
+}
+
+.btn-container {
+}
+
+.hidden-btn-container {
+  display: none;
+}
+
+.output {
+  display: none;
+  font-size: 2.4rem;
+}

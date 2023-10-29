@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer - JS</title>
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="section-timer">
+        <h1 class="heading-primary center-text">Countdown timer</h1>
+
+        <div class="container">
+          <div class="input-output-container">
+            <div>
+              <input
+                class="hour-input"
+                type="number"
+                max="99"
+                placeholder="HH"
+              />
+              <span class="output hour-output"></span>
+            </div>
+            <span class="unselectable">:</span>
+            <div>
+              <input
+                class="minute-input"
+                type="number"
+                max="59"
+                placeholder="MM"
+              />
+              <span class="output minute-output"></span>
+            </div>
+            <span class="unselectable">:</span>
+            <div>
+              <input
+                class="second-input"
+                type="number"
+                max="59"
+                placeholder="SS"
+              />
+              <span class="output second-output"></span>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn--start">Start</button>
+            <div class="hidden-btn-container">
+              <button class="btn btn--pause">Pause</button>
+              <button class="btn btn--reset">Reset</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
