@@ -18,6 +18,12 @@ body {
   color: #555;
 }
 
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
 .btn {
   display: block;
   border-radius: 11px;
