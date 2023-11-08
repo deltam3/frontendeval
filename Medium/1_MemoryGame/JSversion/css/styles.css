@@ -1,0 +1,23 @@
+.section-game {
+  padding: 3.2rem;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.game-item {
+  border: 2px solid black;
+  text-align: center;
+  padding: 4.8rem;
+  background-color: currentColor;
+  transition: all 0.3s;
+}
+
+.game-item.clicked {
+  background-color: white;
+}
