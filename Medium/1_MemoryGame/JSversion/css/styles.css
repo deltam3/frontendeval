@@ -21,3 +21,11 @@
 .game-item.clicked {
   background-color: white;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.click-off {
+  pointer-events: none;
+}
