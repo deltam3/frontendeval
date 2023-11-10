@@ -26,6 +26,31 @@
   visibility: hidden;
 }
 
+.displayNone {
+  display: none;
+}
+
 .click-off {
   pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal p {
+  background-color: blue;
+  padding: 1.2rem 2.4rem;
+  color: white;
+  cursor: pointer;
+}
+
+.active {
+  display: flex;
 }
