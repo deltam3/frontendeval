@@ -14,9 +14,17 @@ gameItems.forEach((gameItem) => {
   gameItem.addEventListener("click", handleClick);
 });
 
+console.log(revealedCardOne);
+
 function handleClick(e) {
   if (revealedCardsCount === 1) {
     // clicking for the second time
+
+    // when clicking the first item again
+    if (revealedCardOne === e.target) {
+      return;
+    }
+
     e.target.classList.toggle("clicked");
     revealedCardTwo = e.target;
     revealedCardsCount++;
@@ -32,7 +40,7 @@ function handleClick(e) {
         gameItemNumberLeft -= 2;
         checkGameItem();
       }, 3000);
-    } else {
+    } else if (revealedCardOne.textContent !== revealedCardTwo.textContent) {
       setTimeout(() => {
         revealedCardOne.classList.remove("clicked");
         revealedCardTwo.classList.remove("clicked");
