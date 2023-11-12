@@ -1,0 +1,20 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.counter-number {
+  font-size: 4.4rem;
+  text-align: center;
+}
+
+.history-heading {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.history {
+  border: 2px solid black;
+  padding: 1.2rem 2.4rem;
+}

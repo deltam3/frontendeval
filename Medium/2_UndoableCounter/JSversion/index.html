@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medium - Undoable Counter</title>
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="section-counter">
+        <h1 class="heading-primary center-text">Undoable counter</h1>
+        <div class="counter container">
+          <div class="undo-redo-container">
+            <button class="btn">Undo</button>
+            <button class="btn">Redo</button>
+          </div>
+          <div class="counter-container">
+            <div>
+              <button class="btn btn-minus-100" onclick="updateCount(-100)">
+                -100
+              </button>
+              <button class="btn btn-minus-10" onclick="updateCount(-10)">
+                -10
+              </button>
+              <button class="btn btn-minus-1" onclick="updateCount(-1)">
+                -1
+              </button>
+            </div>
+            <p class="counter-number">0</p>
+            <div>
+              <button class="btn btn-plus-1" onclick="updateCount(+1)">
+                +1
+              </button>
+              <button class="btn btn-plus-10" onclick="updateCount(+10)">
+                +10
+              </button>
+              <button class="btn btn-plus-100" onclick="updateCount(+100)">
+                +100
+              </button>
+            </div>
+          </div>
+          <div class="history-container">
+            <p class="history-heading">History</p>
+            <div class="history"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
