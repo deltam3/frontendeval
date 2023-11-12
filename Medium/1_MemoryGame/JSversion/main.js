@@ -1,3 +1,8 @@
+const sixBySixArray = [
+  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12,
+  13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18,
+];
+
 let revealedCardsCount = 0;
 let revealedCardOne;
 let revealedCardTwo;
@@ -63,4 +68,32 @@ playAgainEl.addEventListener("click", () => {
   });
   modalEl.classList.remove("active");
   modalEl.classList.add("displayNone");
+  makeNewGameItems(sixBySixArray);
 });
+
+const makeNewGameItems = (array) => {
+  let newArray = shuffle(array);
+
+  function shuffle(array) {
+    let currentIndex = array.length;
+    let randomIndex;
+
+    while (currentIndex > 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  }
+
+  console.log(newArray);
+
+  for (let i = 0; i < newArray.length; i++) {
+    gameItems[i].textContent = newArray[i];
+  }
+};
