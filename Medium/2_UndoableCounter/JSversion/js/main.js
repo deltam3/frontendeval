@@ -1,5 +1,5 @@
 let beforeNumber = 0;
-let newNumber;
+let afterNumber;
 let historyArray = [];
 
 let counterNumberEl = document.querySelector(".counter-number");
@@ -7,15 +7,38 @@ let btns = document.querySelectorAll(".btn");
 
 const updateCount = (number) => {
   counterNumberEl.textContent = beforeNumber += number;
-  newNumber = counterNumberEl.textContent;
-  updateHistory(beforeNumber, number, newNumber);
+  afterNumber = counterNumberEl.textContent;
+  updateHistory(beforeNumber, number, afterNumber);
 };
 
-const updateHistory = (beforeNumber, inputNumber, newNumber) => {
+const updateHistory = (beforeNumber, inputNumber, afterNumber) => {
   let newHistory = document.createElement("div");
-  newHistory.innerHTML = `<span>${inputNumber}</span> <span>(${
+  newHistory.classList.add("history-item");
+  newHistory.innerHTML = `<span class="inputNumber">${inputNumber}</span> <span>(${
     beforeNumber - inputNumber
-  } -> ${newNumber})</span>`;
+  } -> ${afterNumber})</span>`;
+  let historyObject = {
+    oldNumber: beforeNumber,
+    inputNumber: inputNumber,
+    afterNumber: beforeNumber - inputNumber,
+  };
+  historyArray.push(historyObject);
   let historyEl = document.querySelector(".history");
   historyEl.append(newHistory);
 };
+
+// UNDO
+
+const undoBtn = document.querySelector(".undoBtn");
+undoBtn.addEventListener("click", () => {
+  const historyItems = document.querySelectorAll(".history-item");
+  historyItems[historyItems.length - 1].remove();
+  let counterNumberEl = document.querySelector(".counter-number");
+  counterNumberEl.textContent =
+    +historyArray[historyArray.length - 1].oldNumber -
+    historyArray[historyArray.length - 1].inputNumber;
+  historyArray.pop();
+});
+
+// REDO
+const redoBtn = document.querySelector(".redoBtn");
