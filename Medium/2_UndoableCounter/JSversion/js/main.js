@@ -1,6 +1,7 @@
 let beforeNumber = 0;
 let afterNumber;
 let historyArray = [];
+let currentHistoryIndex;
 
 let counterNumberEl = document.querySelector(".counter-number");
 let btns = document.querySelectorAll(".btn");
@@ -23,11 +24,13 @@ const updateHistory = (beforeNumber, inputNumber, afterNumber) => {
     afterNumber: beforeNumber - inputNumber,
   };
   historyArray.push(historyObject);
+
   let historyEl = document.querySelector(".history");
   historyEl.append(newHistory);
 };
 
 // UNDO
+const undoedItems = [];
 
 const undoBtn = document.querySelector(".undoBtn");
 undoBtn.addEventListener("click", () => {
@@ -37,8 +40,17 @@ undoBtn.addEventListener("click", () => {
   counterNumberEl.textContent =
     +historyArray[historyArray.length - 1].oldNumber -
     historyArray[historyArray.length - 1].inputNumber;
+  let poppedItem = historyArray.pop();
+  undoedItems.push(poppedItem);
   historyArray.pop();
 });
 
 // REDO
 const redoBtn = document.querySelector(".redoBtn");
+redoBtn.addEventListener("click", () => {
+  // update counter
+  let counterNumberEl = document.querySelector(".counter-number");
+
+  // update history
+  historyArray.push();
+});
