@@ -1,14 +1,22 @@
 let beforeNumber = 0;
 let afterNumber;
-let historyArray = [];
+let historyArray = [{ beforeNumber: 0, inputNumber: 0, afterNumber: 0 }];
 let currentHistoryIndex;
 
 let counterNumberEl = document.querySelector(".counter-number");
 let btns = document.querySelectorAll(".btn");
 
 const updateCount = (number) => {
-  counterNumberEl.textContent = beforeNumber += number;
-  afterNumber = counterNumberEl.textContent;
+  // counterNumberEl.textContent = beforeNumber += number;
+  console.log(historyArray);
+  // let beforeNumber = +historyArray[historyArray.length - 1].beforeNumber;
+  // let afterNumber =
+  //   +historyArray[historyArray.length - 1].beforeNumber + +number;
+
+  // counterNumberEl.textContent = +afterNumber;
+
+  afterNumber, (counterNumberEl.textContent = beforeNumber += number);
+
   updateHistory(beforeNumber, number, afterNumber);
 };
 
@@ -16,17 +24,20 @@ const updateHistory = (beforeNumber, inputNumber, afterNumber) => {
   let newHistory = document.createElement("div");
   newHistory.classList.add("history-item");
   newHistory.innerHTML = `<span class="inputNumber">${inputNumber}</span> <span>(${
-    afterNumber + inputNumber
+    beforeNumber - +inputNumber
   } -> ${afterNumber})</span>`;
-  let historyObject = {
-    oldNumber: beforeNumber,
-    inputNumber: inputNumber,
-    afterNumber: beforeNumber - inputNumber,
-  };
-  historyArray.push(historyObject);
-
   let historyEl = document.querySelector(".history");
   historyEl.append(newHistory);
+
+  let historyObject = {
+    oldNumber: +beforeNumber,
+    inputNumber: +inputNumber,
+    afterNumber: +afterNumber,
+  };
+
+  // console.log(historyObject);
+
+  historyArray.push(historyObject);
 };
 
 // UNDO
@@ -50,7 +61,14 @@ const redoBtn = document.querySelector(".redoBtn");
 redoBtn.addEventListener("click", () => {
   // update counter
   let counterNumberEl = document.querySelector(".counter-number");
-
+  let lastInput = +historyArray[historyArray.length - 1].inputNumber;
+  let lastOutput = +historyArray[historyArray.length - 1].afterNumber;
+  counterNumberEl.textContent = lastInput + lastOutput;
   // update history
-  historyArray.push();
+  let newHistory = document.createElement("div");
+  newHistory.classList.add("history-item");
+  newHistory.innerHTML = `<span class="inputNumber">${lastInput}</span> <span>(${
+    lastOutput + inputNumber
+  } -> ${afterNumber})</span>`;
+  historyArray.push(historyObject);
 });
