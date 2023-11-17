@@ -11,7 +11,7 @@ const updateCount = (number) => {
   ].beforeNumber += number;
   console.log((historyArray[historyArray.length - 1].beforeNumber += number));
   afterNumber = counterNumberEl.textContent;
-  // console.log(beforeNumber);
+
   updateHistory(beforeNumber, number, afterNumber);
 };
 
