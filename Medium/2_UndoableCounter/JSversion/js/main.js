@@ -1,31 +1,35 @@
-let beforeNumber = 0;
-let afterNumber;
+// let beforeNumber = 0;
+// let afterNumber = 0;
 let historyArray = [{ beforeNumber: 0, inputNumber: 0, afterNumber: 0 }];
 let currentHistoryIndex;
 
 let counterNumberEl = document.querySelector(".counter-number");
 let btns = document.querySelectorAll(".btn");
 
-const updateCount = (number) => {
-  // counterNumberEl.textContent = beforeNumber += number;
-  console.log(historyArray);
-  // let beforeNumber = +historyArray[historyArray.length - 1].beforeNumber;
-  // let afterNumber =
-  //   +historyArray[historyArray.length - 1].beforeNumber + +number;
+const updateCount = (inputNumber) => {
+  wasLastActionUndo = false;
+  let beforeNumber = historyArray[historyArray.length - 1].afterNumber;
+  let afterNumber =
+    historyArray[historyArray.length - 1].afterNumber + inputNumber;
 
-  // counterNumberEl.textContent = +afterNumber;
+  counterNumberEl.textContent = afterNumber;
 
-  afterNumber, (counterNumberEl.textContent = beforeNumber += number);
+  updateHistory(beforeNumber, inputNumber, afterNumber);
 
-  updateHistory(beforeNumber, number, afterNumber);
+  let historyObject = {
+    beforeNumber: beforeNumber,
+    inputNumber: inputNumber,
+    afterNumber: afterNumber,
+  };
+  historyArray.push(historyObject);
 };
 
 const updateHistory = (beforeNumber, inputNumber, afterNumber) => {
   let newHistory = document.createElement("div");
   newHistory.classList.add("history-item");
-  newHistory.innerHTML = `<span class="inputNumber">${inputNumber}</span> <span>(${
-    beforeNumber - +inputNumber
-  } -> ${afterNumber})</span>`;
+
+  newHistory.innerHTML = `<span class="inputNumber">${inputNumber}</span> <span>(${beforeNumber} -> ${afterNumber})</span>`;
+
   let historyEl = document.querySelector(".history");
   historyEl.append(newHistory);
 
@@ -35,40 +39,59 @@ const updateHistory = (beforeNumber, inputNumber, afterNumber) => {
     afterNumber: +afterNumber,
   };
 
-  // console.log(historyObject);
-
   historyArray.push(historyObject);
 };
 
 // UNDO
-const undoedItems = [];
-
+let wasLastActionUndo = false;
 const undoBtn = document.querySelector(".undoBtn");
 undoBtn.addEventListener("click", () => {
+  wasLastActionUndo = true;
+  // delete the latest history item
   const historyItems = document.querySelectorAll(".history-item");
   historyItems[historyItems.length - 1].remove();
+  // reset the counter
   let counterNumberEl = document.querySelector(".counter-number");
   counterNumberEl.textContent =
-    +historyArray[historyArray.length - 1].oldNumber -
+    +historyArray[historyArray.length - 1].afterNumber -
     historyArray[historyArray.length - 1].inputNumber;
-  let poppedItem = historyArray.pop();
-  undoedItems.push(poppedItem);
+
+  // remove the last history item
   historyArray.pop();
 });
 
 // REDO
 const redoBtn = document.querySelector(".redoBtn");
 redoBtn.addEventListener("click", () => {
+  // if undo btn was the last action
+  if (wasLastActionUndo === true) {
+    // delete the latest history item
+    const historyItems = document.querySelectorAll(".history-item");
+    historyItems[historyItems.length - 1].remove();
+    // reset the counter
+    let counterNumberEl = document.querySelector(".counter-number");
+    counterNumberEl.textContent =
+      +historyArray[historyArray.length - 1].afterNumber -
+      historyArray[historyArray.length - 1].inputNumber;
+    // remove the last history item
+    historyArray.pop();
+    return;
+  }
+
+  let lastOutput = historyArray[historyArray.length - 1].afterNumber;
+  let lastInput = historyArray[historyArray.length - 1].inputNumber;
+
   // update counter
   let counterNumberEl = document.querySelector(".counter-number");
-  let lastInput = +historyArray[historyArray.length - 1].inputNumber;
-  let lastOutput = +historyArray[historyArray.length - 1].afterNumber;
-  counterNumberEl.textContent = lastInput + lastOutput;
+  let newOutput = lastOutput + lastInput;
+  counterNumberEl.textContent = newOutput;
+
+  updateHistory(lastOutput, lastInput, newOutput);
+
   // update history
-  let newHistory = document.createElement("div");
-  newHistory.classList.add("history-item");
-  newHistory.innerHTML = `<span class="inputNumber">${lastInput}</span> <span>(${
-    lastOutput + inputNumber
-  } -> ${afterNumber})</span>`;
-  historyArray.push(historyObject);
+  historyArray.push({
+    beforeNumber: lastOutput,
+    inputNumber: lastInput,
+    afterNumber: +lastInput + +lastOutput,
+  });
 });
