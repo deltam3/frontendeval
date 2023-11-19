@@ -1,0 +1,14 @@
+.shopping-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.shopping-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopping-item-deleteBtn {
+}

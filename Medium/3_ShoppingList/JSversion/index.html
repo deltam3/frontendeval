@@ -9,7 +9,29 @@
     <link rel="stylesheet" href="./css/queries.css" />
   </head>
   <body>
-    <h1>My shopping list</h1>
+    <h1 class="heading-primary center-text">My shopping list</h1>
+    <main>
+      <section class="section-list">
+        <div class="container">
+          <form onsubmit="handleSubmit(e)">
+            <input
+              type="text"
+              placeholder="search here"
+              onchange="handleInput(e)"
+            />
+          </form>
+        </div>
+        <div class="container shopping-list">
+          <div class="shopping-item" id="1">
+            <div class="">
+              <span>V</span>
+              <span>Eggs</span>
+            </div>
+            <div class="shopping-item-deleteBtn" id="">X</div>
+          </div>
+        </div>
+      </section>
+    </main>
     <script src="./js/main.js"></script>
   </body>
 </html>
