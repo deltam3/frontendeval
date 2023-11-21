@@ -1,15 +1,3 @@
-// const shoppingItems = [{}];
-
-// const handleSubmit = (e) => {
-//   e.preventDefault();
-//   console.log(e.target.value);
-// };
-
-// const handleInput = (e) => {
-//   e.preventDefault();
-//   console.log(e.target.value);
-// };
-
 const inputEl = document.querySelector(".textInput");
 inputEl.addEventListener("change", (e) => {
   e.preventDefault();
@@ -18,16 +6,23 @@ inputEl.addEventListener("change", (e) => {
     let promise = await fetch(
       `https://api.frontendeval.com/fake/food/${e.target.value}`
     )
-      .then(function (response) {
-        return response.json();
+      .then((res) => {
+        return res.json();
       })
-      .then(function (json) {
-        return json;
+      .then((result) => {
+        let items = result;
+        let searchResultEl = document.querySelector(".search-result");
+
+        items.map(function (item) {
+          let li = document.createElement("li");
+          li.innerHTML = `<div>${item}</div>`;
+          searchResultEl.append(li);
+        });
       });
-    return promise;
+    ul.appendChild(list);
   };
+
   let returnedItems = fetchPartialItems();
-  console.log(returnedItems);
 });
 
 const shoppingListEl = document.querySelector(".shopping-list");
