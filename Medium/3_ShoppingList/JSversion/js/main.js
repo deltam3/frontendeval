@@ -19,10 +19,9 @@ inputEl.addEventListener("change", (e) => {
           searchResultEl.append(li);
         });
       });
-    ul.appendChild(list);
   };
 
-  let returnedItems = fetchPartialItems();
+  fetchPartialItems();
 });
 
 const shoppingListEl = document.querySelector(".shopping-list");
@@ -35,4 +34,18 @@ const handleDeleteBtn = (e) => {
     deleteItem(target);
   }
 };
+
+const handleCheckBtn = (e) => {
+  let target = e.target;
+  if (e.target.classList.contains("shopping-item-checkBtn")) {
+    const checkItem = (target) => {
+      target.parentNode.parentNode.classList.add("turn-gray");
+      target.nextElementSibling.classList.add("linethrough");
+      console.log(target.nextElementSibling);
+    };
+    checkItem(target);
+  }
+};
+
 shoppingListEl.addEventListener("click", handleDeleteBtn);
+shoppingListEl.addEventListener("click", handleCheckBtn);

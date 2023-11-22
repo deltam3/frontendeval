@@ -12,3 +12,11 @@
 
 .shopping-item-deleteBtn {
 }
+
+.turn-gray {
+  color: lightgray;
+}
+
+.linethrough {
+  text-decoration: line-through !important;
+}
