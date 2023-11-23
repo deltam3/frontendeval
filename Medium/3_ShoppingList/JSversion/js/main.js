@@ -4,7 +4,6 @@ inputEl.addEventListener("change", (e) => {
   if (inputEl.value.length < 2) return;
 
   const fetchPartialItems = async () => {
-    console.log(inputEl.textContent);
     let promise = await fetch(
       `https://api.frontendeval.com/fake/food/${e.target.value}`
     )
@@ -64,7 +63,6 @@ const handleCheckBtn = (e) => {
       target.nextElementSibling.innerHTML =
         "<del>" + target.nextElementSibling.textContent + "</del>";
       target.nextElementSibling.classList.add("linethrough");
-      console.log(target.nextElementSibling);
     };
     checkItem(target);
   }
