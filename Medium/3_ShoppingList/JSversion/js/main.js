@@ -13,9 +13,20 @@ inputEl.addEventListener("change", (e) => {
         let items = result;
         let searchResultEl = document.querySelector(".search-result");
 
+        let listEl = document.querySelector(".shopping-list");
         items.map(function (item) {
           let li = document.createElement("li");
-          li.innerHTML = `<div>${item}</div>`;
+          li.innerHTML = `<div class="shopping-item">${item}</div>`;
+          li.addEventListener("click", () => {
+            let newItem = document.createElement("li");
+            newItem.classList.add(`shopping-item`);
+            newItem.innerHTML = `<div class="">
+            <span class="shopping-item-checkBtn">V</span>
+            <span class="shopping-item-title">${item}</span>
+          </div>
+          <div class="shopping-item-deleteBtn" id="">X</div>`;
+            listEl.append(newItem);
+          });
           searchResultEl.append(li);
         });
       });
