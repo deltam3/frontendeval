@@ -49,8 +49,18 @@ const handleDeleteBtn = (e) => {
 const handleCheckBtn = (e) => {
   let target = e.target;
   if (e.target.classList.contains("shopping-item-checkBtn")) {
+    if (e.target.nextElementSibling.classList.contains("linethrough")) {
+      target.nextElementSibling.classList.remove("linethrough");
+      target.parentNode.parentNode.classList.remove("turn-gray");
+      target.nextElementSibling.innerHTML =
+        target.nextElementSibling.textContent;
+      return;
+    }
     const checkItem = (target) => {
       target.parentNode.parentNode.classList.add("turn-gray");
+
+      target.nextElementSibling.innerHTML =
+        "<del>" + target.nextElementSibling.textContent + "</del>";
       target.nextElementSibling.classList.add("linethrough");
       console.log(target.nextElementSibling);
     };
