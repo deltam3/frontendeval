@@ -1,8 +1,10 @@
 const inputEl = document.querySelector(".textInput");
 inputEl.addEventListener("change", (e) => {
   e.preventDefault();
+  if (inputEl.value.length < 2) return;
 
   const fetchPartialItems = async () => {
+    console.log(inputEl.textContent);
     let promise = await fetch(
       `https://api.frontendeval.com/fake/food/${e.target.value}`
     )
