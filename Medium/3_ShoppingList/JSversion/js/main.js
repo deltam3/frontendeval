@@ -3,6 +3,16 @@ inputEl.addEventListener("change", (e) => {
   e.preventDefault();
   if (inputEl.value.length < 2) return;
 
+  function debounce(func, timeout = 500) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, timeout);
+    };
+  }
+
   const fetchPartialItems = async () => {
     let promise = await fetch(
       `https://api.frontendeval.com/fake/food/${e.target.value}`
@@ -32,8 +42,9 @@ inputEl.addEventListener("change", (e) => {
         });
       });
   };
-
-  fetchPartialItems();
+  const processChange = debounce(() => fetchPartialItems());
+  processChange();
+  // fetchPartialItems();
 });
 
 const shoppingListEl = document.querySelector(".shopping-list");
