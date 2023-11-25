@@ -25,6 +25,7 @@ inputEl.addEventListener("change", (e) => {
         let searchResultEl = document.querySelector(".search-result");
 
         let listEl = document.querySelector(".shopping-list");
+        searchResultEl.innerHTML = "";
         items.map(function (item) {
           let li = document.createElement("li");
           li.innerHTML = `<div class="shopping-item">${item}</div>`;
