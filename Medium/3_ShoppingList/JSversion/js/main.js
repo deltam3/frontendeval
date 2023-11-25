@@ -45,7 +45,6 @@ inputEl.addEventListener("change", (e) => {
   };
   const processChange = debounce(() => fetchPartialItems());
   processChange();
-  // fetchPartialItems();
 });
 
 const shoppingListEl = document.querySelector(".shopping-list");
