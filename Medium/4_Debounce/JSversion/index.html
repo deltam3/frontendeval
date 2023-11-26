@@ -9,7 +9,17 @@
     <link rel="stylesheet" href="./css/queries.css" />
   </head>
   <body>
-    <h1>Debounce</h1>
+    <main>
+      <section class="section-search">
+        <div>
+          <form onsubmit="event.preventDefault()">
+            <label>Search for books</label>
+            <input type="text" class="input-text" />
+          </form>
+          <ul class="search-result"></ul>
+        </div>
+      </section>
+    </main>
     <script src="./js/main.js"></script>
   </body>
 </html>
