@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="section-dice">
+        <div class="game">
+          <div class="dice-heading">
+            <h1>Number of dice</h1>
+            <form onsubmit="event.preventDefault()">
+              <input type="number" placeholder="0" class="input-number" />
+            </form>
+            <button class="btn btn--full">Roll</button>
+          </div>
+          <div class="dices">
+            <span class="dice"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

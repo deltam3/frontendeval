@@ -1,0 +1,51 @@
+.section-padding {
+  padding: 3.2rem 0;
+}
+
+.game {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.dice-heading {
+  text-align: center;
+}
+
+.dices {
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.dice {
+  font-size: 10rem;
+  font-weight: 500;
+}
+
+.dice::after {
+  content: "";
+  animation: rolling 6s linear infinite;
+}
+
+@keyframes rolling {
+  0% {
+    content: "\2680";
+  }
+  20% {
+    content: "\2681";
+  }
+  40% {
+    content: "\2682";
+  }
+  60% {
+    content: "\2683";
+  }
+  80% {
+    content: "\2684";
+  }
+  100% {
+    content: "\2685";
+  }
+}
