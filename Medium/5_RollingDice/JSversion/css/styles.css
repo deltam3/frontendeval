@@ -22,6 +22,7 @@
 .dice {
   font-size: 10rem;
   font-weight: 500;
+  /* animation-play-state: paused; */
 }
 
 .dice::after {
@@ -48,4 +49,8 @@
   100% {
     content: "\2685";
   }
+}
+
+.paused {
+  animation-play-state: paused;
 }
