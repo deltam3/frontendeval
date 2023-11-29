@@ -22,12 +22,37 @@
 .dice {
   font-size: 10rem;
   font-weight: 500;
-  /* animation-play-state: paused; */
+  width: 10rem;
+  height: 10rem;
 }
 
-.dice::after {
+.dice.before::after {
+  content: "\2680";
+}
+
+.dice.rolling::after {
   content: "";
   animation: rolling 6s linear infinite;
+}
+
+.dice.result1::after {
+  content: "\2680";
+}
+
+.dice.result2::after {
+  content: "\2681";
+}
+.dice.result3::after {
+  content: "\2682";
+}
+.dice.result4::after {
+  content: "\2683";
+}
+.dice.result5::after {
+  content: "\2684";
+}
+.dice.result6::after {
+  content: "\2685";
 }
 
 @keyframes rolling {
@@ -51,6 +76,6 @@
   }
 }
 
-.paused {
-  animation-play-state: paused;
+.played {
+  animation-play-state: running;
 }
