@@ -18,11 +18,6 @@ let rollBtn = document.querySelector(".btn--full");
 rollBtn.addEventListener("click", () => {
   let allDicesEl = document.querySelectorAll(".dice");
 
-  setTimeout(() => {
-    item.classList.remove("before");
-    item.classList.add("rolling");
-  }, 1000);
-
   allDicesEl.forEach((item) => {
     item.classList.remove("rolling");
 
