@@ -35,13 +35,13 @@ btnEmailEl.addEventListener("click", (e) => {
   formEmailEl.classList.add("hide");
 
   // show next
-  formBirthdayEl.classList.toggle("hide");
+  formBirthdayEl.classList.remove("hide");
 });
 
 // birthday
 let inputBirthdayEl = document.querySelector(".input-birthday");
 let btnBirthdayEl = document.querySelector(".btn--birthday");
-btnEmailEl.addEventListener("click", (e) => {
+btnBirthdayEl.addEventListener("click", (e) => {
   e.preventDefault();
   formValues[2].birthdayValue = inputBirthdayEl.value;
 
@@ -49,5 +49,5 @@ btnEmailEl.addEventListener("click", (e) => {
   formBirthdayEl.classList.add("hide");
 
   // show next
-  formPasswordEl.classList.toggle("hide");
+  formPasswordEl.classList.remove("hide");
 });
