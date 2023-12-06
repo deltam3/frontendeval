@@ -51,3 +51,23 @@ btnBirthdayEl.addEventListener("click", (e) => {
   // show next
   formPasswordEl.classList.remove("hide");
 });
+
+// back button functionality
+const emailBackBtn = document.querySelector(".btn--email-back");
+const birthdayBackBtn = document.querySelector(".btn--birthday-back");
+const passwordBackBtn = document.querySelector(".btn--password-back");
+
+emailBackBtn.addEventListener("click", () => {
+  formEmailEl.classList.add("hide");
+  formNameEl.classList.remove("hide");
+});
+
+birthdayBackBtn.addEventListener("click", () => {
+  formBirthdayEl.classList.add("hide");
+  formEmailEl.classList.remove("hide");
+});
+
+passwordBackBtn.addEventListener("click", () => {
+  formPasswordEl.classList.add("hide");
+  formBirthdayEl.classList.remove("hide");
+});
