@@ -52,6 +52,20 @@ btnBirthdayEl.addEventListener("click", (e) => {
   formPasswordEl.classList.remove("hide");
 });
 
+let inputPasswordEl = document.querySelector(".input-password");
+let btnPasswordEl = document.querySelector(".btn--password");
+let sectionSuccessEl = document.querySelector(".section-success");
+btnPasswordEl.addEventListener("click", (e) => {
+  e.preventDefault();
+  formValues[3].passwordValue = inputPasswordEl.value;
+
+  // hide
+  formPasswordEl.classList.add("hide");
+
+  // show next
+  sectionSuccessEl.classList.remove("hide");
+});
+
 // back button functionality
 const emailBackBtn = document.querySelector(".btn--email-back");
 const birthdayBackBtn = document.querySelector(".btn--birthday-back");
