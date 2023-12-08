@@ -1,0 +1,20 @@
+.section-code {
+  padding: 6.4rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-number {
+  max-width: 2rem;
+  border: 2px solid black;
+}
