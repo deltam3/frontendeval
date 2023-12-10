@@ -27,3 +27,13 @@ numberInputs.forEach((input) => {
     }
   });
 });
+
+numberInputs.forEach((input) => {
+  input.addEventListener("keydown", (e) => {
+    // let position = input.selectionStart;
+    if (e.key === "Backspace" && input.value === "") {
+      input.previousSibling.previousSibling.value = "";
+      input.previousSibling.previousSibling.focus();
+    }
+  });
+});
