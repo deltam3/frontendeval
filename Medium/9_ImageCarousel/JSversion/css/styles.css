@@ -1,11 +1,15 @@
 .carousel-container {
-  max-width: 1000px;
+  max-width: 50rem;
   position: relative;
   margin: auto;
 }
 
 .carousel-slide {
   display: none;
+}
+
+.carousel-slide img {
+  width: 100%;
 }
 
 .prev,
