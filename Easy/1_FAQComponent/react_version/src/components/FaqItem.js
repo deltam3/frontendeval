@@ -1,33 +1,23 @@
 import styles from "./FaqItem.module.css";
 import { IoArrowForwardSharp, IoArrowDownSharp } from "react-icons/io5";
 
-import { useState, useEffect } from "react";
-
-function FaqItem({ question, answer, index }) {
-  const [showAnswer, setShowAnswer] = useState(false);
-
+function FaqItem({ question, answer, id, handleClick, isShown }) {
   const onClickHandler = (e) => {
-    if (showAnswer === true) {
-      setShowAnswer(false);
-    } else {
-      setShowAnswer(true);
+    if (isShown === true) {
+      handleClick(id);
+    } else if (isShown === false) {
+      handleClick(id);
     }
   };
 
-  useEffect(() => {
-    if (index === 0) {
-      setShowAnswer(true);
-    }
-  }, []);
-
   return (
-    <div className={`${styles.item}`} onClick={onClickHandler}>
+    <div className={`${styles.item}`} onClick={() => onClickHandler()}>
       <div className={styles.icon}>
-        {showAnswer ? <IoArrowDownSharp /> : <IoArrowForwardSharp />}
+        {isShown ? <IoArrowDownSharp /> : <IoArrowForwardSharp />}
       </div>
       <div>
         <h3>{question}</h3>
-        <p>{showAnswer && answer}</p>
+        <p>{isShown && answer}</p>
       </div>
     </div>
   );

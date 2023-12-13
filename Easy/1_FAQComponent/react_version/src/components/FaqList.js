@@ -3,15 +3,17 @@ import styles from "./FaqList.module.css";
 
 import FaqItem from "./FaqItem";
 
-function FaqList({ faqs }) {
+function FaqList({ questions, handleClick }) {
   return (
     <ul className={styles.ul}>
-      {faqs.map((faq, index) => (
-        <li key={faq.answer}>
+      {questions.map((question) => (
+        <li key={question.id}>
           <FaqItem
-            question={faq.question}
-            answer={faq.answer}
-            index={index}
+            question={question.question}
+            answer={question.answer}
+            isShown={question.isShown}
+            id={question.id}
+            handleClick={handleClick}
           ></FaqItem>
         </li>
       ))}
