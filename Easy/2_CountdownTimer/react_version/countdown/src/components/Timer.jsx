@@ -4,17 +4,51 @@ import "./Timer.css";
 
 function Timer({ isActive, setIsActive }) {
   const [isPaused, setIsPaused] = useState(false);
+  const [hourValue, setHourValue] = useState("HH");
+  const [minValue, setMinValue] = useState("MM");
+  const [secValue, setSecValue] = useState("SS");
+
+  const handleHourChange = (e) => {
+    setHourValue(e.target.value);
+  };
+
+  const handleMinChange = (e) => {
+    setMinValue(e.target.value);
+  };
+
+  const handleSecChange = (e) => {
+    setSecValue(e.target.value);
+  };
+
   return (
     <section className="section-timer">
       <form className="form">
         <div>
-          <input type="number" className="hour-number" placeholder="HH"></input>
+          <input
+            type="number"
+            value={hourValue}
+            className="hour-number"
+            placeholder="HH"
+            onChange={(e) => handleHourChange(e)}
+          ></input>
         </div>
         <div>
-          <input type="number" className="hour-number" placeholder="MM"></input>
+          <input
+            type="number"
+            value={minValue}
+            className="hour-number"
+            placeholder="MM"
+            onChange={(e) => handleMinChange(e)}
+          ></input>
         </div>
         <div>
-          <input type="number" className="hour-number" placeholder="SS"></input>
+          <input
+            type="number"
+            value={secValue}
+            className="hour-number"
+            placeholder="SS"
+            onChange={(e) => handleSecChange(e)}
+          ></input>
         </div>
         <div>
           {isActive ? (
