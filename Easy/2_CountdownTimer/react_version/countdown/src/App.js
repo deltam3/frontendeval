@@ -5,6 +5,9 @@ import Countdown from "./components/Countdown";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
+  const [hourValue, setHourValue] = useState("HH");
+  const [minValue, setMinValue] = useState("MM");
+  const [secValue, setSecValue] = useState("SS");
 
   return (
     <div>
@@ -12,7 +15,15 @@ function App() {
       {isActive ? (
         <Countdown></Countdown>
       ) : (
-        <Timer isActive={isActive} setIsActive={setIsActive}></Timer>
+        <Timer
+          isActive={isActive}
+          setIsActive={setIsActive}
+          hourValue={hourValue}
+          minValue={minValue}
+          setHourValue={setHourValue}
+          setMinValue={setMinValue}
+          setSecValue={setSecValue}
+        ></Timer>
       )}
     </div>
   );

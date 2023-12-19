@@ -2,12 +2,16 @@ import React from "react";
 import { useState } from "react";
 import "./Timer.css";
 
-function Timer({ isActive, setIsActive }) {
-  const [isPaused, setIsPaused] = useState(false);
-  const [hourValue, setHourValue] = useState("HH");
-  const [minValue, setMinValue] = useState("MM");
-  const [secValue, setSecValue] = useState("SS");
-
+function Timer({
+  isActive,
+  setIsActive,
+  hourValue,
+  minValue,
+  secValue,
+  setHourValue,
+  setMinValue,
+  setSecValue,
+}) {
   const handleHourChange = (e) => {
     setHourValue(e.target.value);
   };
@@ -55,7 +59,7 @@ function Timer({ isActive, setIsActive }) {
             <div>
               <button
                 className="btn btn--pause"
-                onClick={() => setIsPaused(!isPaused)}
+                onClick={() => setIsActive(!isActive)}
               >
                 Pause
               </button>
