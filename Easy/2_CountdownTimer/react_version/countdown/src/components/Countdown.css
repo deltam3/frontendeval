@@ -1,0 +1,10 @@
+.section-countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown {
+  display: flex;
+  gap: 2rem;
+}

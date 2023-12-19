@@ -13,13 +13,23 @@ function App() {
     <div>
       <h1 className="heading-primary center-text">Countdown Timer</h1>
       {isActive ? (
-        <Countdown></Countdown>
+        <Countdown
+          isActive={isActive}
+          setIsActive={setIsActive}
+          hourValue={hourValue}
+          minValue={minValue}
+          secValue={secValue}
+          setHourValue={setHourValue}
+          setMinValue={setMinValue}
+          setSecValue={setSecValue}
+        ></Countdown>
       ) : (
         <Timer
           isActive={isActive}
           setIsActive={setIsActive}
           hourValue={hourValue}
           minValue={minValue}
+          secValue={secValue}
           setHourValue={setHourValue}
           setMinValue={setMinValue}
           setSecValue={setSecValue}
