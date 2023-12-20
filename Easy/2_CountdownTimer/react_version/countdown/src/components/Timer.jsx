@@ -55,24 +55,9 @@ function Timer({
           ></input>
         </div>
         <div>
-          {isActive ? (
-            <div>
-              <button
-                className="btn btn--pause"
-                onClick={() => setIsActive(!isActive)}
-              >
-                Pause
-              </button>
-              <button className="btn btn--reset">Reset</button>
-            </div>
-          ) : (
-            <button
-              className="btn btn--start"
-              onClick={() => setIsActive(true)}
-            >
-              Start
-            </button>
-          )}
+          <button className="btn btn--start" onClick={() => setIsActive(true)}>
+            Start
+          </button>
         </div>
       </form>
     </section>

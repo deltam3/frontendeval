@@ -24,6 +24,15 @@ function Countdown({
           <p>{secValue}</p>
         </div>
       </div>
+      <div>
+        <button
+          className="btn btn--pause"
+          onClick={() => setIsActive(!isActive)}
+        >
+          Pause
+        </button>
+        <button className="btn btn--reset">Reset</button>
+      </div>
     </section>
   );
 }
