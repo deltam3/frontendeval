@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Timer from "./components/Timer";
 import Countdown from "./components/Countdown";
 
@@ -14,6 +14,7 @@ function App() {
       <h1 className="heading-primary center-text">Countdown Timer</h1>
       {isActive ? (
         <Countdown
+          seconds={90}
           isActive={isActive}
           setIsActive={setIsActive}
           hourValue={hourValue}
