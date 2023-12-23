@@ -11,6 +11,7 @@ function Timer({
   setHourValue,
   setMinValue,
   setSecValue,
+  handleSubmit,
 }) {
   const handleHourChange = (e) => {
     setHourValue(e.target.value);
@@ -26,7 +27,7 @@ function Timer({
 
   return (
     <section className="section-timer">
-      <form className="form">
+      <form className="form" onSubmit={(e) => handleSubmit(e)}>
         <div>
           <input
             type="number"

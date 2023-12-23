@@ -1,42 +1,19 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Timer from "./components/Timer";
-import Countdown from "./components/Countdown";
+import TimerList from "./components/TimerList.jsx";
+
+const initialTimer = [
+  { id: 1, hour: 0, min: 0, sec: 0, isActive: false },
+  { id: 2, hour: 0, min: 0, sec: 0, isActive: false },
+];
 
 function App() {
-  const [isActive, setIsActive] = useState(false);
-  const [hourValue, setHourValue] = useState("HH");
-  const [minValue, setMinValue] = useState("MM");
-  const [secValue, setSecValue] = useState("SS");
-
+  const [timers, setTimers] = useState();
   return (
     <main className="main">
       <section className="section-timer">
         <h1 className="heading-primary center-text">Countdown Timer</h1>
-        {isActive ? (
-          <Countdown
-            seconds={90}
-            isActive={isActive}
-            setIsActive={setIsActive}
-            hourValue={hourValue}
-            minValue={minValue}
-            secValue={secValue}
-            setHourValue={setHourValue}
-            setMinValue={setMinValue}
-            setSecValue={setSecValue}
-          ></Countdown>
-        ) : (
-          <Timer
-            isActive={isActive}
-            setIsActive={setIsActive}
-            hourValue={hourValue}
-            minValue={minValue}
-            secValue={secValue}
-            setHourValue={setHourValue}
-            setMinValue={setMinValue}
-            setSecValue={setSecValue}
-          ></Timer>
-        )}
+        <TimerList timers={timers}></TimerList>
       </section>
     </main>
   );
