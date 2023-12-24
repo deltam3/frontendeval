@@ -1,24 +1,31 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Timer.css";
 
-function Timer({ timer }) {
+import BeforeStart from "./BeforeStart";
+import AfterStart from "./AfterStart";
+
+function Timer({ timer, setTimers }) {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleActive = (e) => {
+    e.preventDefault();
+
+    setIsActive((isActive) => setIsActive(!isActive));
+  };
+
   return (
-    <li>
-      <h1>{timer.id}</h1>
+    <li className="timer-item">
+      {isActive ? (
+        <AfterStart></AfterStart>
+      ) : (
+        <BeforeStart
+          setTimers={setTimers}
+          handleActive={handleActive}
+        ></BeforeStart>
+      )}
     </li>
   );
 }
 
 export default Timer;
-
-// import BookShow from './BookShow';
-// function BookList({ books, onDelete, onEdit }) {
-//   const renderedBooks = books.map((book) => {
-//     return (
-//       <BookShow onEdit={onEdit} onDelete={onDelete} key={book.id} book={book} />
-//     );
-//   });
-//   return <div className="book-list">{renderedBooks}</div>;
-// }
-// export default BookList;

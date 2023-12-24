@@ -13,7 +13,7 @@ function App() {
     <main className="main">
       <section className="section-timer">
         <h1 className="heading-primary center-text">Countdown Timer</h1>
-        <TimerList timers={timers}></TimerList>
+        <TimerList timers={timers} setTimers={setTimers}></TimerList>
       </section>
     </main>
   );
