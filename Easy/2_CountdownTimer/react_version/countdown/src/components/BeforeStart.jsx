@@ -1,7 +1,13 @@
 import React from "react";
 import "./BeforeStart.css";
 
+import Button from "./Button";
+
 function BeforeStart({ setTimers, handleActive }) {
+  const handleClick = (e) => {
+    handleActive(e);
+  };
+
   return (
     <form className="form-timer" onSubmit={(e) => handleActive(e)}>
       <div>
@@ -19,7 +25,9 @@ function BeforeStart({ setTimers, handleActive }) {
       <div>
         <input type="number" placeholder="SS"></input>
       </div>
-      <button className="btn btn-start">Start</button>
+      <Button primary onClick={handleClick}>
+        Start
+      </Button>
     </form>
   );
 }
