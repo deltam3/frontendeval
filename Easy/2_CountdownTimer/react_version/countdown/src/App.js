@@ -8,7 +8,7 @@ const initialTimer = [
 ];
 
 function App() {
-  const [timers, setTimers] = useState();
+  const [timers, setTimers] = useState(initialTimer);
   return (
     <main className="main">
       <section className="section-timer">
