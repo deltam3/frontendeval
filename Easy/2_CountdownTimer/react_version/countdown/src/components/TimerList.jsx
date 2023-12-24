@@ -6,7 +6,12 @@ function TimerList({ timers, setTimers }) {
     <ul>
       {timers.map((timer) => {
         return (
-          <Timer key={timer.id} timer={timer} setTimers={setTimers}></Timer>
+          <Timer
+            key={timer.id}
+            timers={timers}
+            timer={timer}
+            setTimers={setTimers}
+          ></Timer>
         );
       })}
     </ul>

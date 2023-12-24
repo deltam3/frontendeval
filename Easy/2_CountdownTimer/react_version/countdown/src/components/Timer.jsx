@@ -5,7 +5,7 @@ import "./Timer.css";
 import BeforeStart from "./BeforeStart";
 import AfterStart from "./AfterStart";
 
-function Timer({ timer, setTimers }) {
+function Timer({ timer, timers, setTimers }) {
   const [isActive, setIsActive] = useState(false);
 
   const handleActive = (e) => {
@@ -17,9 +17,11 @@ function Timer({ timer, setTimers }) {
   return (
     <li className="timer-item">
       {isActive ? (
-        <AfterStart></AfterStart>
+        <AfterStart timer={timer}></AfterStart>
       ) : (
         <BeforeStart
+          timerId={timer.id}
+          timers={timers}
           setTimers={setTimers}
           handleActive={handleActive}
         ></BeforeStart>
