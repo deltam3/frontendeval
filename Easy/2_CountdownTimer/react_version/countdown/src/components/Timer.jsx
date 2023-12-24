@@ -17,7 +17,7 @@ function Timer({ timer, timers, setTimers }) {
   return (
     <li className="timer-item">
       {isActive ? (
-        <AfterStart timer={timer}></AfterStart>
+        <AfterStart timer={timer} handleActive={handleActive}></AfterStart>
       ) : (
         <BeforeStart
           timerId={timer.id}

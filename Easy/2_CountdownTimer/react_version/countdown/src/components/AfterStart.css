@@ -1,0 +1,9 @@
+.section-afterstart {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.afterstart-times {
+  display: flex;
+}
