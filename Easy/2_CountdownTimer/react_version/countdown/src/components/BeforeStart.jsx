@@ -3,39 +3,27 @@ import "./BeforeStart.css";
 
 import Button from "./Button";
 
-function BeforeStart({ timerId, timers, timer, setTimers, handleActive }) {
+function BeforeStart({ timer, setTimer, handleActive }) {
   const handleClick = (e) => {
     handleActive(e);
   };
 
   const handleHourChange = (e) => {
-    const newTimers = timers.map((timer) => {
-      if (timer.id === timerId) {
-        return { ...timer, hour: e.target.value };
-      }
-      return timer;
+    setTimer((timer) => {
+      return { ...timer, hour: +e.target.value };
     });
-    setTimers(newTimers);
   };
 
   const handleMinChange = (e) => {
-    const newTimers = timers.map((timer) => {
-      if (timer.id === timerId) {
-        return { ...timer, min: e.target.value };
-      }
-      return timer;
+    setTimer((timer) => {
+      return { ...timer, min: +e.target.value };
     });
-    setTimers(newTimers);
   };
 
   const handleSecChange = (e) => {
-    const newTimers = timers.map((timer) => {
-      if (timer.id === timerId) {
-        return { ...timer, sec: e.target.value };
-      }
-      return timer;
+    setTimer((timer) => {
+      return { ...timer, sec: +e.target.value };
     });
-    setTimers(newTimers);
   };
 
   return (

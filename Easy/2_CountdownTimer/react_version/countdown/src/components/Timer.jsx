@@ -5,26 +5,47 @@ import "./Timer.css";
 import BeforeStart from "./BeforeStart";
 import AfterStart from "./AfterStart";
 
-function Timer({ timer, timers, setTimers }) {
-  const [isActive, setIsActive] = useState(false);
+function Timer({ id, timers, setTimers }) {
+  const timerId = id;
+  const [timer, setTimer] = useState({
+    id: timerId,
+    hour: "HH",
+    min: "MM",
+    sec: "SS",
+    isActive: false,
+  });
   const timeSet = useRef(timer);
 
   const handleActive = (e) => {
     e.preventDefault();
-    timeSet.current = timer;
-    setIsActive((isActive) => setIsActive(!isActive));
+    if (timer.isActive === false) {
+      timeSet.current = timer;
+      setTimer((timer) => ({ ...timer, isActive: !timer.isActive }));
+    } else {
+      setTimer((timer) => ({
+        ...timer,
+        hour: timeSet.current.hour,
+        min: timeSet.current.min,
+        sec: timeSet.current.sec,
+      }));
+      setTimer((timer) => ({ ...timer, isActive: !timer.isActive }));
+      return;
+    }
   };
 
   return (
     <li className="timer-item">
-      {isActive ? (
-        <AfterStart timer={timer} handleActive={handleActive}></AfterStart>
+      {timer.isActive ? (
+        <AfterStart
+          timer={timer}
+          setTimer={setTimer}
+          handleActive={handleActive}
+        ></AfterStart>
       ) : (
         <BeforeStart
           timerId={timer.id}
-          timers={timers}
           timer={timer}
-          setTimers={setTimers}
+          setTimer={setTimer}
           handleActive={handleActive}
         ></BeforeStart>
       )}

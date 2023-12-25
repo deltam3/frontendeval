@@ -1,18 +1,30 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button";
 
 import "./AfterStart.css";
 import "./Button.css";
 
-function AfterStart({ timer, handleActive }) {
+function AfterStart({ timer, setTimer, handleActive }) {
+  let timerId = timer.id;
+
+  useEffect(() => {
+    let countdown = setInterval(() => {
+      setTimer((timer) => {
+        return { ...timer, sec: timer.sec - 1 };
+      });
+    }, 1000);
+
+    return () => clearInterval(countdown);
+  }, [timer]);
+
   return (
     <section className="section-afterstart">
       <div className="afterstart-times">
         <div>{timer.hour}</div>
         <span>:</span>
-        <div>{timer.min}</div>
+        <div>{timer.min < 10 ? "0" + timer.min : timer.min}</div>
         <span>:</span>
-        <div>{timer.sec}</div>
+        <div>{timer.sec < 10 ? "0" + timer.sec : timer.sec}</div>
       </div>
       <div>
         <Button primary>Pause</Button>

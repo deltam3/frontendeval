@@ -8,8 +8,8 @@ function TimerList({ timers, setTimers }) {
         return (
           <Timer
             key={timer.id}
+            id={timer.id}
             timers={timers}
-            timer={timer}
             setTimers={setTimers}
           ></Timer>
         );
