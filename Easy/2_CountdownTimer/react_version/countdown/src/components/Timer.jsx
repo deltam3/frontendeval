@@ -17,7 +17,7 @@ function Timer({ id, timers, setTimers }) {
   const timeSet = useRef(timer);
 
   const handleActive = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     if (timer.isActive === false) {
       timeSet.current = timer;
       setTimer((timer) => ({ ...timer, isActive: !timer.isActive }));

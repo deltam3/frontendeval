@@ -60,7 +60,7 @@ function AfterStart({ timer, setTimer, handleActive }) {
       </div>
       <div>
         <Button primary>Pause</Button>
-        <Button primary onClick={() => handleActive()}>
+        <Button primary onClick={(e) => handleActive(e)}>
           Reset
         </Button>
       </div>
