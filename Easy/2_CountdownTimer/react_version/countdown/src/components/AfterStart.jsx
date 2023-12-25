@@ -1,10 +1,10 @@
-import React from "react";
+import { useEffect } from "react";
 import Button from "./Button";
 
 import "./AfterStart.css";
 import "./Button.css";
 
-function AfterStart({ timer, handleActive }) {
+function AfterStart({ timer, handleReset }) {
   return (
     <section className="section-afterstart">
       <div className="afterstart-times">
@@ -16,7 +16,7 @@ function AfterStart({ timer, handleActive }) {
       </div>
       <div>
         <Button primary>Pause</Button>
-        <Button primary onClick={(e) => handleActive(e)}>
+        <Button primary onClick={(e) => handleReset(e)}>
           Reset
         </Button>
       </div>

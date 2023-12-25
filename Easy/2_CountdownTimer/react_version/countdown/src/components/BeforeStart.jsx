@@ -3,7 +3,7 @@ import "./BeforeStart.css";
 
 import Button from "./Button";
 
-function BeforeStart({ timerId, timers, setTimers, handleActive }) {
+function BeforeStart({ timerId, timers, timer, setTimers, handleActive }) {
   const handleClick = (e) => {
     handleActive(e);
   };
@@ -44,6 +44,7 @@ function BeforeStart({ timerId, timers, setTimers, handleActive }) {
         <input
           type="number"
           placeholder="HH"
+          value={timer.hour}
           onChange={(e) => handleHourChange(e)}
         ></input>
       </div>
@@ -54,6 +55,7 @@ function BeforeStart({ timerId, timers, setTimers, handleActive }) {
         <input
           type="number"
           placeholder="MM"
+          value={timer.min}
           onChange={(e) => handleMinChange(e)}
         ></input>
       </div>
@@ -64,6 +66,7 @@ function BeforeStart({ timerId, timers, setTimers, handleActive }) {
         <input
           type="number"
           placeholder="SS"
+          value={timer.sec}
           onChange={(e) => handleSecChange(e)}
         ></input>
       </div>

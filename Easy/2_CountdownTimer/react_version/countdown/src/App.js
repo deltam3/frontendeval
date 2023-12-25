@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import TimerList from "./components/TimerList.jsx";
 
 const initialTimer = [
-  { id: 1, hour: 0, min: 0, sec: 0, isActive: false },
-  { id: 2, hour: 0, min: 0, sec: 0, isActive: false },
+  { id: 1, hour: "HH", min: "MM", sec: "SS", isActive: false },
+  { id: 2, hour: "HH", min: "MM", sec: "SS", isActive: false },
 ];
 
 function App() {
