@@ -4,7 +4,7 @@ import Button from "./Button";
 import "./AfterStart.css";
 import "./Button.css";
 
-function AfterStart({ timer, handleReset }) {
+function AfterStart({ timer, handleActive }) {
   return (
     <section className="section-afterstart">
       <div className="afterstart-times">
@@ -16,7 +16,7 @@ function AfterStart({ timer, handleReset }) {
       </div>
       <div>
         <Button primary>Pause</Button>
-        <Button primary onClick={(e) => handleReset(e)}>
+        <Button primary onClick={(e) => handleActive(e)}>
           Reset
         </Button>
       </div>

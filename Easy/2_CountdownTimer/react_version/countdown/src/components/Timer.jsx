@@ -15,19 +15,10 @@ function Timer({ timer, timers, setTimers }) {
     setIsActive((isActive) => setIsActive(!isActive));
   };
 
-  const handleReset = (e) => {
-    handleActive(e);
-    console.log(timeSet.current);
-  };
-
   return (
     <li className="timer-item">
       {isActive ? (
-        <AfterStart
-          timer={timer}
-          handleActive={handleActive}
-          handleReset={handleReset}
-        ></AfterStart>
+        <AfterStart timer={timer} handleActive={handleActive}></AfterStart>
       ) : (
         <BeforeStart
           timerId={timer.id}
