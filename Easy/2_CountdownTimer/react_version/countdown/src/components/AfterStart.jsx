@@ -9,9 +9,16 @@ function AfterStart({ timer, setTimer, handleActive }) {
 
   useEffect(() => {
     let countdown = setInterval(() => {
-      setTimer((timer) => {
-        return { ...timer, sec: timer.sec - 1 };
-      });
+      if (timer.sec !== 0) {
+        setTimer((timer) => {
+          return { ...timer, sec: timer.sec - 1 };
+        });
+      }
+      if (timer.sec === 0) {
+        setTimer((timer) => {
+          return { ...timer, sec: 59 };
+        });
+      }
     }, 1000);
 
     return () => clearInterval(countdown);
