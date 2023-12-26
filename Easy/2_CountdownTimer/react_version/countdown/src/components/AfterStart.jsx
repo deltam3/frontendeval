@@ -6,8 +6,9 @@ import "./Button.css";
 
 function AfterStart({ timer, setTimer, handleActive }) {
   let timerId = timer.id;
-
+  const [isPaused, setIsPaused] = useState(false);
   useEffect(() => {
+    if (isPaused === true) return;
     let countdown = setInterval(() => {
       // sec이 0이 아닐때
       if (timer.sec !== 0) {
@@ -45,9 +46,12 @@ function AfterStart({ timer, setTimer, handleActive }) {
         }
       }
     }, 1000);
-
     return () => clearInterval(countdown);
-  }, [timer]);
+  }, [timer, isPaused]);
+
+  const handlePause = (e) => {
+    setIsPaused((isPaused) => !isPaused);
+  };
 
   return (
     <section className="section-afterstart">
@@ -59,7 +63,9 @@ function AfterStart({ timer, setTimer, handleActive }) {
         <div>{timer.sec < 10 ? "0" + timer.sec : timer.sec}</div>
       </div>
       <div>
-        <Button primary>Pause</Button>
+        <Button primary onClick={(e) => handlePause(e)}>
+          Pause
+        </Button>
         <Button primary onClick={(e) => handleActive(e)}>
           Reset
         </Button>
