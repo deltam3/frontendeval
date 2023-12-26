@@ -16,8 +16,7 @@ function Timer({ id, timers, setTimers }) {
   });
   const timeSet = useRef(timer);
 
-  const handleActive = (e) => {
-    e.preventDefault();
+  const handleActive = () => {
     if (timer.isActive === false) {
       timeSet.current = timer;
       setTimer((timer) => ({ ...timer, isActive: !timer.isActive }));
@@ -31,6 +30,13 @@ function Timer({ id, timers, setTimers }) {
       setTimer((timer) => ({ ...timer, isActive: !timer.isActive }));
       return;
     }
+  };
+
+  const handleDelete = () => {
+    const newTimers = timers.filter((timer) => {
+      return timerId !== timer.id;
+    });
+    setTimers(newTimers);
   };
 
   return (
@@ -49,6 +55,9 @@ function Timer({ id, timers, setTimers }) {
           handleActive={handleActive}
         ></BeforeStart>
       )}
+      <div>
+        <button onClick={() => handleDelete()}>Delete</button>
+      </div>
     </li>
   );
 }

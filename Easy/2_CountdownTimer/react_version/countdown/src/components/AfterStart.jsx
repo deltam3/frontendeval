@@ -42,6 +42,7 @@ function AfterStart({ timer, setTimer, handleActive }) {
         }
         // turn the timer off when the timer is finished
         if (timer.hour === 0 && timer.min === 0) {
+          alert("alert");
           handleActive();
         }
       }
