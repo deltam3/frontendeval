@@ -5,7 +5,13 @@ import Button from "./Button";
 
 function BeforeStart({ timer, setTimer, handleActive }) {
   const handleClick = (e) => {
-    handleActive(e);
+    if (
+      typeof timer.hour === "number" &&
+      typeof timer.min === "number" &&
+      typeof timer.sec === "number"
+    ) {
+      handleActive();
+    }
   };
 
   const handleHourChange = (e) => {
@@ -27,7 +33,7 @@ function BeforeStart({ timer, setTimer, handleActive }) {
   };
 
   return (
-    <form className="form-timer" onSubmit={(e) => handleActive(e)}>
+    <form className="form-timer">
       <div>
         <input
           type="number"
