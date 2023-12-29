@@ -1,12 +1,14 @@
-import React from "react";
+import "./App.css";
 
 import Button from "./components/Button.jsx";
 
 function App() {
   return (
-    <div>
-      <Button></Button>
-    </div>
+    <main className="main">
+      <section class="section-button">
+        <Button primary>Show offer</Button>
+      </section>
+    </main>
   );
 }
 
