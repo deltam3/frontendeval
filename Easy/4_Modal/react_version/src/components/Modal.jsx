@@ -1,36 +1,27 @@
-import { useState } from "react";
+import ReactDOM from "react-dom";
+import { useEffect } from "react";
+import "./Modal.css";
 
-const MODAL_STYLES = {
-  position: "fixed",
-  top: "50%",
-  lefT: "50%",
-  transform: "translate(-50%, -50%)",
-  backgroundColor: "#FFF",
-  padding: "50px",
-  zIndex: 1000,
-};
+function Modal({ onClose, children, actionBar }) {
+  useEffect(() => {
+    document.body.classList.add("overflow-hidden");
 
-const OVERLAY_STYLES = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  backgroundColor: "rgba(0, 0, 0, 0.7)",
-  zIndex: 1000,
-};
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, []);
 
-function Modal({ open, onClose, children }) {
-  if (!open) return null;
-
-  return ReactDom.createPortal(
-    <>
-      <div style={OVERLAY_STYLES} />
-      <div style={MODAL_STYLES}>
-        <button onClick={onClose}>Close Modal</button>
+  return ReactDOM.createPortal(
+    <div>
+      <div onClick={onClose} className="fixed inset-0 bg-gray-300"></div>
+      <div className="fixed inset-40 p-10 bg-white">
+        <div className="flex flex-col justify-between h-full">
+          {children}
+          <div className="flex justify-end">{actionBar}</div>
+        </div>
       </div>
-    </>,
-    document.getElementById("portal")
+    </div>,
+    document.querySelector(".modal-container")
   );
 }
 
