@@ -6,6 +6,7 @@ import Button from "./components/Button";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [showResult, setShowResult] = useState(false);
 
   const handleClick = () => {
     setShowModal(true);
@@ -15,9 +16,14 @@ function App() {
     setShowModal(false);
   };
 
+  const handleClickAction = () => {
+    setShowModal(false);
+    setShowResult(true);
+  };
+
   const actionBar = (
     <div>
-      <Button onClick={handleClose} primary>
+      <Button onClick={handleClickAction} primary>
         Accept Offer
       </Button>
     </div>
@@ -34,117 +40,122 @@ function App() {
         Show Offer
       </Button>
       {showModal && modal}
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat elit
-        in est interdum fermentum. Cras vehicula a urna sit amet auctor. Mauris
-        tempor magna a imperdiet posuere. Quisque quis malesuada felis, sit amet
-        commodo mi. Vestibulum finibus suscipit porta. Donec a enim ac eros
-        pellentesque efficitur. In ut ex enim. Cras lacinia quam id urna
-        dapibus, a consequat mauris posuere. Etiam sed erat quis lacus
-        condimentum viverra scelerisque sit amet elit. Mauris eget nunc
-        sagittis, dapibus risus pharetra, placerat neque. Maecenas tristique
-        risus lorem.
-      </p>
+      {showResult ? (
+        <p>Offer Accepted</p>
+      ) : (
+        <>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat
+            elit in est interdum fermentum. Cras vehicula a urna sit amet
+            auctor. Mauris tempor magna a imperdiet posuere. Quisque quis
+            malesuada felis, sit amet commodo mi. Vestibulum finibus suscipit
+            porta. Donec a enim ac eros pellentesque efficitur. In ut ex enim.
+            Cras lacinia quam id urna dapibus, a consequat mauris posuere. Etiam
+            sed erat quis lacus condimentum viverra scelerisque sit amet elit.
+            Mauris eget nunc sagittis, dapibus risus pharetra, placerat neque.
+            Maecenas tristique risus lorem.
+          </p>
+        </>
+      )}
     </div>
   );
 }
