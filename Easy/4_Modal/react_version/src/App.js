@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Modal from "./components/Modal.jsx";
 import "./components/Modal.css";
@@ -13,7 +13,7 @@ function App() {
     setShowModal(true);
   };
 
-  const handleClose = () => {
+  const handleClose = (event) => {
     setShowModal(false);
   };
 
@@ -29,6 +29,21 @@ function App() {
       </Button>
     </div>
   );
+
+  useEffect(() => {
+    function handleEscape(e) {
+      if (e.key === "Escape") {
+        setShowModal(false);
+      }
+    }
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
   const modal = (
     <Modal onClose={handleClose} actionBar={actionBar}>
       <p>click the button below to accept our amazing offer</p>
