@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 
 import Modal from "./components/Modal.jsx";
+import "./components/Modal.css";
 import Button from "./components/Button";
 
 function App() {
@@ -36,9 +37,12 @@ function App() {
 
   return (
     <div>
-      <Button onClick={handleClick} primary>
-        Show Offer
-      </Button>
+      <div className="width-10 margin-auto">
+        <Button onClick={handleClick} primary>
+          Show Offer
+        </Button>
+      </div>
+
       {showModal && modal}
       {showResult ? (
         <p>Offer Accepted</p>

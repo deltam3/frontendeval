@@ -41,3 +41,11 @@
 .justify-end {
   justify-content: flex-end;
 }
+
+.width-10 {
+  max-width: 10rem;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
