@@ -22,7 +22,8 @@ function App() {
       loanAmount *
       ((monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
         (Math.pow(1 + monthlyRate, totalMonths) - 1));
-    setResult(result);
+
+    setResult(Math.floor(result));
   };
 
   return (
