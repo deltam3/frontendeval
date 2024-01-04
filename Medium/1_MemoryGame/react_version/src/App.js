@@ -12,9 +12,28 @@ function App() {
     setShowModal(false);
   };
 
+  const handleDifficultySelect = (number) => {
+    setShowModal(false);
+    setDifficulty(number);
+  };
+
   const modal = (
     <Modal onClose={handleModalClose}>
-      <p>Click the button below</p>
+      <section className="section-difficulties">
+        <div class="difficulties">
+          <div className="difficulty">
+            <Button onClick={() => handleDifficultySelect(5)}>Select 5</Button>
+          </div>
+
+          <div className="difficulty">
+            <Button onClick={() => handleDifficultySelect(6)}>Select 6</Button>
+          </div>
+
+          <div className="difficulty">
+            <Button onClick={() => handleDifficultySelect(8)}>Select 8</Button>
+          </div>
+        </div>
+      </section>
     </Modal>
   );
 
@@ -22,6 +41,7 @@ function App() {
     setShowModal(!showModal);
   };
 
+  // const result = difficulty;
   return (
     <main className="main">
       <section className="section-game">
@@ -37,6 +57,7 @@ function App() {
             </Button>
           </div>
         )}
+        {difficulty}
       </section>
     </main>
   );
