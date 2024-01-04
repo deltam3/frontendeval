@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import { useEffect } from "react";
 import "./Modal.css";
+import Button from "./Button";
 
 function Modal({ onClose, children, actionBar }) {
   useEffect(() => {
