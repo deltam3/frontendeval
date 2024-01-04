@@ -9,7 +9,9 @@
 }
 
 .card-revealed-true {
+  background-color: white;
 }
 
 .card-revealed-false {
+  background-color: #555;
 }
