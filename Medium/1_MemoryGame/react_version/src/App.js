@@ -58,7 +58,7 @@ function App() {
             </Button>
           </div>
         )}
-        {difficulty && <Game></Game>}
+        {difficulty && <Game difficulty={difficulty}></Game>}
       </section>
     </main>
   );
