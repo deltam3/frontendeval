@@ -19,7 +19,7 @@ function Game({ difficulty }) {
   useEffect(() => {
     let result = [];
     let id = 1;
-    for (let i = 1; i <= totalNumberGameItems; i += 2) {
+    for (let i = 1; i <= totalNumberGameItems / 2; i++) {
       result.push({ id: id, number: i });
       id += 1;
       result.push({ id: id, number: i });
