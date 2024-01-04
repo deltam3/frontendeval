@@ -16,7 +16,25 @@ function Game({ difficulty }) {
       id += 1;
       result.push({ id: id, number: i });
     }
-    setGameItems(result);
+
+    function shuffle(array) {
+      let currentIndex = array.length,
+        randomIndex;
+
+      while (currentIndex > 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex],
+          array[currentIndex],
+        ];
+      }
+
+      return array;
+    }
+
+    setGameItems(shuffle(result));
   }, []);
 
   return (
