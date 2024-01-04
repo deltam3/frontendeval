@@ -1,0 +1,51 @@
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  inset: 0px;
+}
+
+.bg-gray-300 {
+  background-color: rgb(209 213 219);
+}
+
+.inset-40 {
+  inset: 10rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
+.bg-white {
+  background-color: rgb(255 255 255);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.width-10 {
+  max-width: 10rem;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
