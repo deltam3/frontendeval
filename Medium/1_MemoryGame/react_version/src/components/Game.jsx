@@ -8,6 +8,15 @@ function Game({ difficulty }) {
   const totalNumberGameItems = difficulty * difficulty;
   const [gameItems, setGameItems] = useState([]);
 
+  let gameList;
+  if (difficulty === 5) {
+    gameList = "gamelist-easy";
+  } else if (difficulty === 6) {
+    gameList = "gamelist-medium";
+  } else {
+    gameList = "gamelist-hard";
+  }
+
   useEffect(() => {
     let result = [];
     let id = 1;
@@ -40,9 +49,11 @@ function Game({ difficulty }) {
   return (
     <div>
       <h1>game</h1>
-      {gameItems.map((gameItem) => {
-        return <GameItem key={gameItem.id} item={gameItem}></GameItem>;
-      })}
+      <div className={gameList}>
+        {gameItems.map((gameItem) => {
+          return <GameItem key={gameItem.id} item={gameItem}></GameItem>;
+        })}
+      </div>
     </div>
   );
 }
