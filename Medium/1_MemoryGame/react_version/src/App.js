@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 
+import Game from "./components/Game";
+
 import Modal from "./components/Modal";
 import Button from "./components/Button";
 
@@ -41,7 +43,6 @@ function App() {
     setShowModal(!showModal);
   };
 
-  // const result = difficulty;
   return (
     <main className="main">
       <section className="section-game">
@@ -57,7 +58,7 @@ function App() {
             </Button>
           </div>
         )}
-        {difficulty}
+        {difficulty && <Game></Game>}
       </section>
     </main>
   );
