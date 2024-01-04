@@ -24,7 +24,7 @@ function App() {
       <section className="section-difficulties">
         <div class="difficulties">
           <div className="difficulty">
-            <Button onClick={() => handleDifficultySelect(5)}>Select 5</Button>
+            <Button onClick={() => handleDifficultySelect(4)}>Select 4</Button>
           </div>
 
           <div className="difficulty">

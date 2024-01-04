@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 import GameItem from "./GameItem";
-
 import "./Game.css";
 
 function Game({ difficulty }) {
@@ -9,7 +8,7 @@ function Game({ difficulty }) {
   const [gameItems, setGameItems] = useState([]);
 
   let gameList;
-  if (difficulty === 5) {
+  if (difficulty === 4) {
     gameList = "gamelist-easy";
   } else if (difficulty === 6) {
     gameList = "gamelist-medium";
@@ -20,7 +19,7 @@ function Game({ difficulty }) {
   useEffect(() => {
     let result = [];
     let id = 1;
-    for (let i = 1; i <= totalNumberGameItems; i++) {
+    for (let i = 1; i <= totalNumberGameItems; i += 2) {
       result.push({ id: id, number: i });
       id += 1;
       result.push({ id: id, number: i });
@@ -48,7 +47,6 @@ function Game({ difficulty }) {
 
   return (
     <div>
-      <h1>game</h1>
       <div className={gameList}>
         {gameItems.map((gameItem) => {
           return <GameItem key={gameItem.id} item={gameItem}></GameItem>;
