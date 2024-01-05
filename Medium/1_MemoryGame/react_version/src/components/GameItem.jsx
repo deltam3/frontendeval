@@ -5,10 +5,8 @@ import "./GameItem.css";
 
 function GameItem({ item, items, setItems }) {
   const thisId = item.id;
-  // const [cardRevealed, setCardRevealed] = useState(false);
 
   const handleClick = () => {
-    // setCardRevealed((cardRevealed) => !cardRevealed);
     const result = items.map((item) => {
       if (item.id === thisId) {
         return { ...item, revealed: !item.revealed };

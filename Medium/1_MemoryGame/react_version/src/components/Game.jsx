@@ -21,7 +21,6 @@ function Game({ difficulty }) {
     let id = 1;
     for (let i = 1; i <= totalNumberGameItems / 2; i++) {
       result.push({ id: id, number: i, revealed: false });
-      // id++;
       id += 1;
       result.push({ id: id, number: i, revealed: false });
       id += 1;
