@@ -20,9 +20,11 @@ function Game({ difficulty }) {
     let result = [];
     let id = 1;
     for (let i = 1; i <= totalNumberGameItems / 2; i++) {
-      result.push({ id: id, number: i });
+      result.push({ id: id, number: i, revealed: false });
+      // id++;
       id += 1;
-      result.push({ id: id, number: i });
+      result.push({ id: id, number: i, revealed: false });
+      id += 1;
     }
 
     function shuffle(array) {
@@ -49,7 +51,14 @@ function Game({ difficulty }) {
     <div>
       <div className={gameList}>
         {gameItems.map((gameItem) => {
-          return <GameItem key={gameItem.id} item={gameItem}></GameItem>;
+          return (
+            <GameItem
+              key={gameItem.id}
+              item={gameItem}
+              items={gameItems}
+              setItems={setGameItems}
+            ></GameItem>
+          );
         })}
       </div>
     </div>
