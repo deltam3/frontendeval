@@ -19,3 +19,7 @@
 .card-revealed-false div h1 {
   display: none;
 }
+
+.card-paired-true {
+  visibility: hidden;
+}

@@ -22,7 +22,7 @@ function App() {
   const modal = (
     <Modal onClose={handleModalClose}>
       <section className="section-difficulties">
-        <div class="difficulties">
+        <div className="difficulties">
           <div className="difficulty">
             <Button onClick={() => handleDifficultySelect(4)}>Select 4</Button>
           </div>

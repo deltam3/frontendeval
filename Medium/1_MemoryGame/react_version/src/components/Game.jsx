@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import GameItem from "./GameItem";
 import "./Game.css";
@@ -6,6 +6,9 @@ import "./Game.css";
 function Game({ difficulty }) {
   const totalNumberGameItems = difficulty * difficulty;
   const [gameItems, setGameItems] = useState([]);
+  const numberRevealed = useRef(0);
+  const cardItemOne = useRef();
+  const cardItemTwo = useRef();
 
   let gameList;
   if (difficulty === 4) {
@@ -20,9 +23,9 @@ function Game({ difficulty }) {
     let result = [];
     let id = 1;
     for (let i = 1; i <= totalNumberGameItems / 2; i++) {
-      result.push({ id: id, number: i, revealed: false });
+      result.push({ id: id, number: i, revealed: false, paired: false });
       id += 1;
-      result.push({ id: id, number: i, revealed: false });
+      result.push({ id: id, number: i, revealed: false, paired: false });
       id += 1;
     }
 
@@ -46,6 +49,10 @@ function Game({ difficulty }) {
     setGameItems(shuffle(result));
   }, []);
 
+  // useEffect((
+
+  // ) => {}, [gameItems]);
+
   return (
     <div>
       <div className={gameList}>
@@ -56,6 +63,9 @@ function Game({ difficulty }) {
               item={gameItem}
               items={gameItems}
               setItems={setGameItems}
+              numberRevealed={numberRevealed}
+              cardItemOne={cardItemOne}
+              cardItemTwo={cardItemTwo}
             ></GameItem>
           );
         })}
