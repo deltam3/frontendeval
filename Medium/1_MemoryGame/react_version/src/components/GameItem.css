@@ -15,3 +15,7 @@
 .card-revealed-false {
   background-color: #555;
 }
+
+.card-revealed-false div h1 {
+  display: none;
+}
