@@ -49,10 +49,6 @@ function Game({ difficulty }) {
     setGameItems(shuffle(result));
   }, []);
 
-  // useEffect((
-
-  // ) => {}, [gameItems]);
-
   return (
     <div>
       <div className={gameList}>
