@@ -17,7 +17,7 @@
 }
 
 .card-paired-true {
-  /* visibility: hidden;
-  pointer-events: none; */
-  background-color: blue;
+  visibility: hidden;
+  pointer-events: none;
+  /* background-color: blue; */
 }

@@ -29,6 +29,7 @@ function GameItem({
       const result = items.map((item) => {
         if (item.id === thisId) {
           cardItemOne.current = item;
+          console.log(cardItemOne);
           return { ...item, revealed: true };
         }
         return item;
@@ -41,10 +42,13 @@ function GameItem({
     ) {
       console.log("two");
 
-      for (let i = 0; i < items.length; i++) {
-        if (item.id === thisId) {
+      let count = 0;
+      while (count <= items.length) {
+        if (items[count].id === thisId) {
           cardItemTwo.current = item;
+          console.log(cardItemTwo);
         }
+        count++;
       }
 
       // when card1 and card2 numbers are the same
@@ -65,7 +69,34 @@ function GameItem({
         });
         cardItemOne.current = null;
         cardItemTwo.current = null;
+
         setItems(result);
+        // setTimeout(() => {
+        //   const result = items.map((item) => {
+        //     if (
+        //       item.id === cardItemOne.current?.id ||
+        //       item.id === cardItemTwo.current?.id
+        //     ) {
+        //       return { ...item, revealed: false, paired: true };
+        //     }
+        //     return item;
+        //   });
+        //   cardItemOne.current = null;
+        //   cardItemTwo.current = null;
+
+        //   setItems(result);
+        // }, 2000);
+
+        // const tempResult = items.map((item) => {
+        //   if (
+        //     item?.id === cardItemOne.current?.id ||
+        //     item?.id === cardItemTwo.current?.id
+        //   ) {
+        //     return { ...item, revealed: true };
+        //   }
+        //   return item;
+        // });
+        // setItems(tempResult);
       }
       // when card1 and card2 numbers are not the same
       if (
@@ -86,17 +117,40 @@ function GameItem({
         cardItemOne.current = null;
         cardItemTwo.current = null;
         setItems(result);
-      }
+        // setTimeout(() => {
+        //   const result = items.map((item) => {
+        //     if (
+        //       item.id === cardItemOne.current?.id ||
+        //       item.id === cardItemTwo.current?.id
+        //     ) {
+        //       return { ...item, revealed: false };
+        //     }
+        //     return item;
+        //   });
+        //   cardItemOne.current = null;
+        //   cardItemTwo.current = null;
+        //   setItems(result);
+        // }, 2000);
 
-      // setItems(result);
+        // const tempResult = items.map((item) => {
+        //   if (
+        //     item?.id === cardItemOne.current?.id ||
+        //     item?.id === cardItemTwo.current?.id
+        //   ) {
+        //     return { ...item, revealed: false };
+        //   }
+        //   return item;
+        // });
+        // setItems(tempResult);
+      }
     }
   };
 
-  const classes = item.revealed
+  const classes = item?.revealed
     ? "card-item card-revealed-true"
     : "card-item card-revealed-false";
 
-  const pairedClasses = item.paired ? "card-paired-true" : "";
+  const pairedClasses = item?.paired ? "card-paired-true" : "";
 
   return (
     <div onClick={handleClick} className={classes + " " + pairedClasses}>
