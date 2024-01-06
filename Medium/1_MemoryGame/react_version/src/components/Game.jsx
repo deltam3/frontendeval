@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 import GameItem from "./GameItem";
 import "./Game.css";
@@ -6,6 +6,7 @@ import "./Game.css";
 function Game({ difficulty }) {
   const totalNumberGameItems = difficulty * difficulty;
   const [gameItems, setGameItems] = useState([]);
+
   const numberRevealed = useRef(0);
   const cardItemOne = useRef();
   const cardItemTwo = useRef();
@@ -54,17 +55,15 @@ function Game({ difficulty }) {
       <div className={gameList}>
         {gameItems.map((gameItem) => {
           return (
-            gameItem.paired && (
-              <GameItem
-                key={gameItem.id}
-                item={gameItem}
-                items={gameItems}
-                setItems={setGameItems}
-                numberRevealed={numberRevealed}
-                cardItemOne={cardItemOne}
-                cardItemTwo={cardItemTwo}
-              ></GameItem>
-            )
+            <GameItem
+              key={gameItem.id}
+              item={gameItem}
+              items={gameItems}
+              setItems={setGameItems}
+              numberRevealed={numberRevealed}
+              cardItemOne={cardItemOne}
+              cardItemTwo={cardItemTwo}
+            ></GameItem>
           );
         })}
       </div>

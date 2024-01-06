@@ -5,7 +5,7 @@
 
   width: 4rem;
   height: 4rem;
-  background-color: #555;
+  /* background-color: #555; */
 }
 
 .card-revealed-true {
@@ -16,10 +16,8 @@
   background-color: #555;
 }
 
-.card-revealed-false div h1 {
-  display: none;
-}
-
 .card-paired-true {
-  visibility: hidden;
+  /* visibility: hidden;
+  pointer-events: none; */
+  background-color: blue;
 }
