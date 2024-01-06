@@ -58,15 +58,17 @@ function Game({ difficulty }) {
       <div className={gameList}>
         {gameItems.map((gameItem) => {
           return (
-            <GameItem
-              key={gameItem.id}
-              item={gameItem}
-              items={gameItems}
-              setItems={setGameItems}
-              numberRevealed={numberRevealed}
-              cardItemOne={cardItemOne}
-              cardItemTwo={cardItemTwo}
-            ></GameItem>
+            gameItem.paired && (
+              <GameItem
+                key={gameItem.id}
+                item={gameItem}
+                items={gameItems}
+                setItems={setGameItems}
+                numberRevealed={numberRevealed}
+                cardItemOne={cardItemOne}
+                cardItemTwo={cardItemTwo}
+              ></GameItem>
+            )
           );
         })}
       </div>
