@@ -7,9 +7,9 @@ function Game({ difficulty }) {
   const totalNumberGameItems = difficulty * difficulty;
   const [gameItems, setGameItems] = useState([]);
 
-  const numberRevealed = useRef(0);
-  const cardItemOne = useRef();
-  const cardItemTwo = useRef();
+  const revealedCardsCount = useRef(0);
+  const cardItemOne = useRef(undefined);
+  const cardItemTwo = useRef(undefined);
 
   let gameList;
   if (difficulty === 4) {
@@ -50,6 +50,50 @@ function Game({ difficulty }) {
     setGameItems(shuffle(result));
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (
+        cardItemOne.current?.number !== undefined &&
+        cardItemTwo.current?.number !== undefined &&
+        cardItemOne.current?.number === cardItemTwo.current?.number
+      ) {
+        const result = gameItems.map((item) => {
+          if (
+            item?.id === cardItemOne.current?.id ||
+            item?.id === cardItemTwo.current?.id
+          ) {
+            return { ...item, revealed: false, paired: true };
+          }
+          return item;
+        });
+        cardItemOne.current = undefined;
+        cardItemTwo.current = undefined;
+        revealedCardsCount.current = 0;
+
+        setGameItems(result);
+      }
+      if (
+        cardItemOne.current?.number !== undefined &&
+        cardItemTwo.current?.number !== undefined &&
+        cardItemOne.current?.number !== cardItemTwo.current?.number
+      ) {
+        const result = gameItems.map((item) => {
+          if (
+            item.id === cardItemOne.current?.id ||
+            item.id === cardItemTwo.current?.id
+          ) {
+            return { ...item, revealed: false, paired: false };
+          }
+          return item;
+        });
+        cardItemOne.current = undefined;
+        cardItemTwo.current = undefined;
+        revealedCardsCount.current = 0;
+        setGameItems(result);
+      }
+    }, 2000);
+  });
+
   return (
     <div>
       <div className={gameList}>
@@ -60,7 +104,7 @@ function Game({ difficulty }) {
               item={gameItem}
               items={gameItems}
               setItems={setGameItems}
-              numberRevealed={numberRevealed}
+              revealedCardsCount={revealedCardsCount}
               cardItemOne={cardItemOne}
               cardItemTwo={cardItemTwo}
             ></GameItem>

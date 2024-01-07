@@ -22,6 +22,12 @@ function App() {
     setShowResult(true);
   };
 
+  const modal = (
+    <Modal onClose={handleClose} actionBar={actionBar}>
+      <p>click the button below to accept our amazing offer</p>
+    </Modal>
+  );
+
   const actionBar = (
     <div>
       <Button onClick={handleClickAction} primary>
@@ -43,12 +49,6 @@ function App() {
       document.removeEventListener("keydown", handleEscape);
     };
   }, []);
-
-  const modal = (
-    <Modal onClose={handleClose} actionBar={actionBar}>
-      <p>click the button below to accept our amazing offer</p>
-    </Modal>
-  );
 
   return (
     <div>

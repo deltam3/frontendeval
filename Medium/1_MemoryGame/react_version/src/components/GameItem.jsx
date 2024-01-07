@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+// import { useState, useEffect, useCallback } from "react";
 
 import "./GameItem.css";
 
@@ -6,26 +6,14 @@ function GameItem({
   item,
   items,
   setItems,
-  numberRevealed,
+  revealedCardsCount,
   cardItemOne,
   cardItemTwo,
 }) {
   const thisId = item.id;
-  const stableHandleClick = useCallback(setItems, [setItems]);
-  // const fetchBooks = async () => {
-  //   const response = await axios.get('http://localhost:3001/books');
-  //   setBooks(response.data)
-  // }
-
-  // const stableFetchBook = useCallback(fetchBooks, [])
 
   const handleClick = () => {
-    //
-    if (
-      cardItemOne.current?.id === undefined &&
-      thisId !== cardItemOne.current?.id
-    ) {
-      console.log("one");
+    if (revealedCardsCount.current === 0) {
       const result = items.map((item) => {
         if (item.id === thisId) {
           cardItemOne.current = item;
@@ -34,114 +22,23 @@ function GameItem({
         }
         return item;
       });
+      revealedCardsCount.current = 1;
       setItems(result);
-    } else if (
-      cardItemOne.current?.id !== undefined &&
-      cardItemTwo.current?.id === undefined &&
-      thisId !== cardItemTwo.current?.id
-    ) {
-      console.log("two");
-
-      let count = 0;
-      while (count <= items.length) {
-        if (items[count].id === thisId) {
-          cardItemTwo.current = item;
-          console.log(cardItemTwo);
-        }
-        count++;
-      }
-
-      // when card1 and card2 numbers are the same
-      if (
-        cardItemOne.current?.number !== undefined &&
-        cardItemTwo.current?.number !== undefined &&
-        cardItemOne.current?.number === cardItemTwo.current?.number
-      ) {
-        console.log("2-1: same cards");
+    } else if (revealedCardsCount.current === 1) {
+      if (cardItemTwo.current === undefined) {
         const result = items.map((item) => {
-          if (
-            item.id === cardItemOne.current?.id ||
-            item.id === cardItemTwo.current?.id
-          ) {
-            return { ...item, revealed: false, paired: true };
+          if (item.id === thisId) {
+            cardItemTwo.current = item;
+            console.log(cardItemOne);
+            return { ...item, revealed: true };
           }
           return item;
         });
-        cardItemOne.current = null;
-        cardItemTwo.current = null;
-
+        revealedCardsCount.current = 2;
         setItems(result);
-        // setTimeout(() => {
-        //   const result = items.map((item) => {
-        //     if (
-        //       item.id === cardItemOne.current?.id ||
-        //       item.id === cardItemTwo.current?.id
-        //     ) {
-        //       return { ...item, revealed: false, paired: true };
-        //     }
-        //     return item;
-        //   });
-        //   cardItemOne.current = null;
-        //   cardItemTwo.current = null;
-
-        //   setItems(result);
-        // }, 2000);
-
-        // const tempResult = items.map((item) => {
-        //   if (
-        //     item?.id === cardItemOne.current?.id ||
-        //     item?.id === cardItemTwo.current?.id
-        //   ) {
-        //     return { ...item, revealed: true };
-        //   }
-        //   return item;
-        // });
-        // setItems(tempResult);
       }
-      // when card1 and card2 numbers are not the same
-      if (
-        cardItemOne.current?.number !== undefined &&
-        cardItemTwo.current?.number !== undefined &&
-        cardItemOne.current?.number !== cardItemTwo.current?.number
-      ) {
-        console.log("2-2: not the same");
-        const result = items.map((item) => {
-          if (
-            item.id === cardItemOne.current?.id ||
-            item.id === cardItemTwo.current?.id
-          ) {
-            return { ...item, revealed: false };
-          }
-          return item;
-        });
-        cardItemOne.current = null;
-        cardItemTwo.current = null;
-        setItems(result);
-        // setTimeout(() => {
-        //   const result = items.map((item) => {
-        //     if (
-        //       item.id === cardItemOne.current?.id ||
-        //       item.id === cardItemTwo.current?.id
-        //     ) {
-        //       return { ...item, revealed: false };
-        //     }
-        //     return item;
-        //   });
-        //   cardItemOne.current = null;
-        //   cardItemTwo.current = null;
-        //   setItems(result);
-        // }, 2000);
-
-        // const tempResult = items.map((item) => {
-        //   if (
-        //     item?.id === cardItemOne.current?.id ||
-        //     item?.id === cardItemTwo.current?.id
-        //   ) {
-        //     return { ...item, revealed: false };
-        //   }
-        //   return item;
-        // });
-        // setItems(tempResult);
+      if (cardItemTwo.current !== undefined) {
+        return;
       }
     }
   };
@@ -162,69 +59,3 @@ function GameItem({
 }
 
 export default GameItem;
-
-// useEffect(() => {
-//   if (numberRevealed.current === 2) {
-//     if (cardItemOne.current.number === cardItemTwo.current.number) {
-//       const result = items.map((item) => {
-//         if (cardItemOne.current.id === item.id) {
-//           item.classList.add("visibility-none");
-//           return { ...item, paired: true };
-//         }
-//         if (cardItemTwo.current.id === item.id) {
-//           item.classList.add("visibility-none");
-//           return { ...item, paired: true };
-//         }
-//       });
-//       setItems(result);
-//       numberRevealed.current = 0;
-//     }
-
-//     if (cardItemOne.current.number !== cardItemTwo.current.number) {
-//       const result = items.map((item) => {
-//         return { ...item, revealed: !item.revealed };
-//       });
-//       setItems(result);
-//       numberRevealed.current = 0;
-//     }
-//   }
-// }, [numberRevealed.current]);
-
-// useEffect(() => {
-//   if (
-//     cardItemOne.current !== undefined &&
-//     cardItemTwo.current !== undefined &&
-//     cardItemOne.current?.number === cardItemTwo.current?.number
-//   ) {
-//     const result = items.map((item) => {
-//       if (
-//         item.id === cardItemOne.current?.id ||
-//         item.id === cardItemTwo.current?.id
-//       ) {
-//         return { ...item, revealed: false, paired: true };
-//       }
-//       return item;
-//     });
-//     cardItemOne.current = null;
-//     cardItemTwo.current = null;
-//     stableHandleClick(result);
-//   }
-//   if (
-//     cardItemOne.current !== undefined &&
-//     cardItemTwo.current !== undefined &&
-//     cardItemOne.current?.number !== cardItemTwo.current?.number
-//   ) {
-//     const result = items.map((item) => {
-//       if (
-//         item.id === cardItemOne.current?.id ||
-//         item.id === cardItemTwo.current?.id
-//       ) {
-//         return { ...item, revealed: false };
-//       }
-//       return item;
-//     });
-//     cardItemOne.current = null;
-//     cardItemTwo.current = null;
-//     stableHandleClick(result);
-//   }
-// }, [items, cardItemOne, cardItemTwo, stableHandleClick]);
