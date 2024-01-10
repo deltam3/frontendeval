@@ -38,3 +38,17 @@ body {
 .counter--main {
   display: flex;
 }
+
+.counter--history {
+  text-align: center;
+}
+
+.history--container {
+  border: 2px solid black;
+  padding: 1rem 2rem;
+}
+
+.history--item {
+  display: flex;
+  gap: 2rem;
+}

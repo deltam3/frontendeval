@@ -26,6 +26,12 @@ function App() {
             </div>
             <div className="counter--history">
               <p>History</p>
+              <div className="history--container">
+                <div className="history--item">
+                  <span>-1</span>
+                  <span>(108 -> 107)</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
