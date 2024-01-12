@@ -1,6 +1,9 @@
 import { FAQType } from "../pages/FAQPage";
 import styled from "styled-components";
 
+import { HiArrowNarrowRight } from "react-icons/hi";
+import { HiArrowNarrowDown } from "react-icons/hi";
+
 type Props = {
   item: FAQType;
   items: Array<FAQType>;
@@ -28,7 +31,14 @@ const FAQItem = (props: Props) => {
 
   return (
     <ItemBox onClick={handleClick}>
-      <p>{props.item.question}</p>
+      <p>
+        {props.item.isOpen ? (
+          <HiArrowNarrowDown></HiArrowNarrowDown>
+        ) : (
+          <HiArrowNarrowRight></HiArrowNarrowRight>
+        )}
+        {props.item.question}
+      </p>
       <p>{props.item.isOpen && props.item.answer}</p>
     </ItemBox>
   );
