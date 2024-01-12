@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import FAQItem from "../components/FAQItem";
+import styled from "styled-components";
 
 export type FAQType = {
   id: number;
   question: string;
   answer: string;
+  isOpen: boolean;
 };
 
-const FAQPage = (props: Props) => {
-  const [questions, setQuestions] = useState([
+const FAQPage = () => {
+  const [questions, setQuestions] = useState<Array<FAQType>>([
     {
       id: 1,
       question: "How many bones does a cat have?",
@@ -30,15 +32,34 @@ const FAQPage = (props: Props) => {
     },
   ]);
 
+  const FAQPageBox = styled.div`
+    max-width: 90rem;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  `;
+
   const result = questions.map((question) => {
-    return <FAQItem key={question.id} item={question}></FAQItem>;
+    return (
+      <FAQItem
+        key={question.id}
+        item={question}
+        items={questions}
+        setQuestions={setQuestions}
+      ></FAQItem>
+    );
   });
 
+  // const handleClick = () => {};
+
   return (
-    <div>
+    <FAQPageBox>
       <h1>Frequently Asked Questions</h1>
       {result}
-    </div>
+    </FAQPageBox>
   );
 };
 
