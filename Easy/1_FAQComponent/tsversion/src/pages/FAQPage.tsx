@@ -53,8 +53,6 @@ const FAQPage = () => {
     );
   });
 
-  // const handleClick = () => {};
-
   return (
     <FAQPageBox>
       <h1>Frequently Asked Questions</h1>

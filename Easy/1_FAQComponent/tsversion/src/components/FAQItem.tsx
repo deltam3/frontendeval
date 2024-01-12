@@ -1,4 +1,3 @@
-import { Factory } from "react";
 import { FAQType } from "../pages/FAQPage";
 import styled from "styled-components";
 
@@ -10,17 +9,19 @@ type Props = {
 
 const FAQItem = (props: Props) => {
   const ItemBox = styled.div`
+    width: 20rem;
     border: 2px solid black;
     padding: 1rem 2rem;
   `;
 
   const thisId = props.item.id;
 
-  const handleClick: () => void = () => {
-    const result: Array<FAQType> = props.items.map((item) => {
+  const handleClick: (e) => void = (e) => {
+    const result = props.items.map((item) => {
       if (item.id === thisId) {
         return { ...item, isOpen: !item.isOpen };
       }
+      return { ...item, isOpen: false };
     });
     props.setQuestions(result);
   };
@@ -28,8 +29,7 @@ const FAQItem = (props: Props) => {
   return (
     <ItemBox onClick={handleClick}>
       <p>{props.item.question}</p>
-      {/* <p>{props.item.isOpen && props.item.answer}</p> */}
-      <p>{props.item.answer}</p>
+      <p>{props.item.isOpen && props.item.answer}</p>
     </ItemBox>
   );
 };
