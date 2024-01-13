@@ -12,6 +12,7 @@ type Props = {
 
 const FAQItem = (props: Props) => {
   const ItemBox = styled.div`
+    height: 9rem;
     width: 20rem;
     border: 2px solid black;
     padding: 1rem 2rem;
@@ -19,7 +20,7 @@ const FAQItem = (props: Props) => {
 
   const thisId = props.item.id;
 
-  const handleClick: (e) => void = (e) => {
+  const handleClick: () => void = () => {
     const result = props.items.map((item) => {
       if (item.id === thisId) {
         return { ...item, isOpen: !item.isOpen };
