@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useImmer } from "use-immer";
+import { useState, useRef } from "react";
+// import TimerList from "./components/TimerList.tsx";
+
+const initialTimers = [{ id: 1 }, { id: 2 }];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [timer, setTimers] = useState(initialTimers);
+  // const currentId = useRef(2);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main>
+      <section>
+        <h1>Countdown Timer</h1>
+        {/* <TimerList timers={timers} setTimers={setTimers}></TimerList> */}
+        {/* <button onClick={handleAddClick}>Add Timer</button> */}
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;
