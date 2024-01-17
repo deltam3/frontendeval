@@ -18,3 +18,7 @@ export default App;
 // use immer
 // use Context API
 // useReducer
+
+// useMemo
+// useCallback
+// React.memo();
