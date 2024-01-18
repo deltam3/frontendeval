@@ -4,7 +4,6 @@ const FaqsContext = createContext(null);
 const FaqDispatchContext = createContext(null);
 
 function Provider({ children }) {
-  // const [faqs, setFaqs] = useState([]);
   const [faqs, dispatch] = useReducer(faqsReducer, initialFaqs);
   const number = 5;
 
