@@ -1,3 +1,4 @@
+import { BasicAccordionItem } from "./components/AccordionItems";
 import useFaqsContext from "./hooks/use-faqs-context";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <main>
       <section>
         <h1>App</h1>
-        <h2>{number}</h2>
+        <BasicAccordionItem>{number}</BasicAccordionItem>
       </section>
     </main>
   );

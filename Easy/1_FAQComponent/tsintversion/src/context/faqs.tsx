@@ -3,6 +3,13 @@ import { createContext, useState, useReducer } from "react";
 const FaqsContext = createContext(null);
 const FaqDispatchContext = createContext(null);
 
+export type FaqListItemType = {
+  id: number;
+  question: string;
+  answer: string;
+  isOpen: boolean;
+};
+
 function Provider({ children }) {
   const [faqs, dispatch] = useReducer(faqsReducer, initialFaqs);
   const number = 5;

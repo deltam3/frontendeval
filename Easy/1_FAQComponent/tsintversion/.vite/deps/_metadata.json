@@ -1,31 +1,37 @@
 {
-  "hash": "d3633cd4",
+  "hash": "d817106a",
   "configHash": "5f26aba1",
-  "lockfileHash": "00e82020",
-  "browserHash": "9b14eaa1",
+  "lockfileHash": "f7f9cd7a",
+  "browserHash": "e3ad6a69",
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "545fc329",
+      "fileHash": "c5caf60c",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "416ef438",
+      "fileHash": "e85c8d2f",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "506b899e",
+      "fileHash": "cf548c3f",
       "needsInterop": true
+    },
+    "styled-components": {
+      "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "styled-components.js",
+      "fileHash": "a386a688",
+      "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-XFZ2DVVZ": {
-      "file": "chunk-XFZ2DVVZ.js"
+    "chunk-UPDK7Z2H": {
+      "file": "chunk-UPDK7Z2H.js"
     }
   }
 }
