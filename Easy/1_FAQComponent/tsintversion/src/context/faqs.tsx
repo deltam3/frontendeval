@@ -1,4 +1,5 @@
 import { createContext, useState, useReducer } from "react";
+import { useImmerReducer } from "use-immer";
 
 const FaqsContext = createContext(null);
 const FaqDispatchContext = createContext(null);
@@ -10,8 +11,18 @@ export type FaqListItemType = {
   isOpen: boolean;
 };
 
+export const FAQ_ACTION = {
+  CLICKED: "clickFaq" as const,
+};
+
+export const FaqActionCreator = {
+  clickFaq: (id: number) => ({ type: FAQ_ACTION.CLICKED, payload: { id: id } }),
+};
+
+export type FaqActionType = ReturnType<typeof FaqActionCreator.clickFaq>;
+
 function Provider({ children }) {
-  const [faqs, dispatch] = useReducer(faqsReducer, initialFaqs);
+  const [faqs, dispatchFaqList] = useImmerReducer(faqsReducer, initialFaqs);
   const number = 5;
 
   const valueToShare = {
@@ -28,11 +39,11 @@ function Provider({ children }) {
   );
 }
 
-function faqsReducer(faqs, action) {
+function faqsReducer(state: Array<FaqListItemType>, action: FaqActionType) {
   switch (action.type) {
-    case "clicked": {
-      return undefined;
-    }
+    case FAQ_ACTION.CLICKED:
+      return 4;
+    // return dispatchFaqList();
   }
 }
 

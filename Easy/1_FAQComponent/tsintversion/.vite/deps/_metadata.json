@@ -2,30 +2,36 @@
   "hash": "d817106a",
   "configHash": "5f26aba1",
   "lockfileHash": "f7f9cd7a",
-  "browserHash": "e3ad6a69",
+  "browserHash": "889a907f",
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "c5caf60c",
+      "fileHash": "2b500b0e",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "e85c8d2f",
+      "fileHash": "8bee8b28",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "cf548c3f",
+      "fileHash": "35e927c7",
       "needsInterop": true
     },
     "styled-components": {
       "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
       "file": "styled-components.js",
-      "fileHash": "a386a688",
+      "fileHash": "2ba135dc",
+      "needsInterop": false
+    },
+    "use-immer": {
+      "src": "../../node_modules/use-immer/dist/use-immer.module.js",
+      "file": "use-immer.js",
+      "fileHash": "bde2b394",
       "needsInterop": false
     }
   },
