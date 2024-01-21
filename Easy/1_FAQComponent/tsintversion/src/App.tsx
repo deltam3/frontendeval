@@ -5,6 +5,7 @@ import { useImmerReducer } from "use-immer";
 
 import styled from "styled-components";
 import FaqItem from "./components/FaqItem";
+import { FaqActionCreator } from "./context/faqs";
 
 export type FaqItemType = {
   id: number;
@@ -35,16 +36,31 @@ const initialFaqs = [
   },
 ];
 
-function faqsReducer(faqs, action) {
+const FAQ_ACTION = {
+  TOGGLED: "toggled" as const,
+};
+
+export const FaqActionCreator = {
+  toggleFaq: (faq: FaqItemType) => ({
+    type: FAQ_ACTION.TOGGLED,
+    payload: { faq: faq },
+  }),
+};
+
+export type FAQActionType = ReturnType<typeof FaqActionCreator.toggleFaq>;
+
+function faqsReducer(faqs: Array<FaqItemType>, action: FAQActionType) {
   switch (action.type) {
-    case "toggled": {
+    case FAQ_ACTION.TOGGLED: {
       return faqs.map((faq) => {
-        if (faq.id === action.faq.id) {
+        if (faq.id === action.payload.faq.id) {
           return { ...faq, isShown: !faqs.isShown };
         }
         return { ...faq, isShown: false };
       });
     }
+    default:
+      return faqs;
   }
 }
 
@@ -52,10 +68,10 @@ function App() {
   const [faqs, dispatch] = useReducer(faqsReducer, initialFaqs);
 
   function handleToggleFaq(faq: FaqItemType) {
-    dispatch({
-      type: "toggled",
-      faq: faq,
-    });
+    dispatch(
+      // { type: "toggled", faq: faq }
+      FaqActionCreator.toggleFaq(faq)
+    );
   }
 
   return (
