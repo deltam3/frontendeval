@@ -42,7 +42,7 @@ function faqsReducer(faqs, action) {
         if (faq.id === action.faq.id) {
           return { ...faq, isShown: !faqs.isShown };
         }
-        return faq;
+        return { ...faq, isShown: false };
       });
     }
   }
