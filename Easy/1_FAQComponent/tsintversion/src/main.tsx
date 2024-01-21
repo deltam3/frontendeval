@@ -6,7 +6,7 @@ import "./index.css";
 import { Provider } from "./context/faqs";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <Provider>
-    <App />
-  </Provider>
+  // <Provider>
+  <App />
+  // </Provider>
 );
