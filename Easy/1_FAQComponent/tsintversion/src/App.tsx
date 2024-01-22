@@ -13,7 +13,7 @@ function App() {
 
   return (
     <section>
-      <h1>App</h1>
+      <h1>Frequently asked questions</h1>
       {faqs.map((faq) => {
         return (
           <FaqItem
