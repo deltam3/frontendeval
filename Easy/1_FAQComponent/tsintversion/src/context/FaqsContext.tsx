@@ -72,5 +72,3 @@ const initialFaqs = [
     isShown: false,
   },
 ];
-
-// export { Provider };
