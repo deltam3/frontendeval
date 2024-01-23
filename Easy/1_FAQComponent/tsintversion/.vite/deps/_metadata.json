@@ -1,47 +1,56 @@
 {
-  "hash": "d817106a",
+  "hash": "11c098a0",
   "configHash": "5f26aba1",
-  "lockfileHash": "f7f9cd7a",
-  "browserHash": "d5b69967",
+  "lockfileHash": "5bcd63a3",
+  "browserHash": "c26c656b",
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "9cb4911b",
+      "fileHash": "4b1c0eb9",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "6efa047f",
+      "fileHash": "a4f43e9c",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "5e70081c",
+      "fileHash": "be138007",
       "needsInterop": true
     },
     "styled-components": {
       "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
       "file": "styled-components.js",
-      "fileHash": "509fa9e5",
+      "fileHash": "835bce7a",
       "needsInterop": false
     },
     "use-immer": {
       "src": "../../node_modules/use-immer/dist/use-immer.module.js",
       "file": "use-immer.js",
-      "fileHash": "156dfefb",
+      "fileHash": "5438e342",
       "needsInterop": false
     },
     "react-icons/vsc": {
       "src": "../../node_modules/react-icons/vsc/index.mjs",
       "file": "react-icons_vsc.js",
-      "fileHash": "776401c6",
+      "fileHash": "b622ca60",
+      "needsInterop": false
+    },
+    "react-spring": {
+      "src": "../../node_modules/react-spring/dist/react-spring.modern.mjs",
+      "file": "react-spring.js",
+      "fileHash": "bfff31c9",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-UWZXFKA6": {
+      "file": "chunk-UWZXFKA6.js"
+    },
     "chunk-UPDK7Z2H": {
       "file": "chunk-UPDK7Z2H.js"
     }
