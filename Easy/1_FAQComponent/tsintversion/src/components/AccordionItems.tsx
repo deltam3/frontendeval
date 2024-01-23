@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const BasicAccordionItem = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
   padding: 1rem 2rem;
   color: #555;
   min-width: 100rem;
