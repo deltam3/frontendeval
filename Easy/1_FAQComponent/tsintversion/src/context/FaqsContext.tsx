@@ -7,7 +7,7 @@ export type FaqItemType = {
   id: number;
   question: string;
   answer: string;
-  isOpen: boolean;
+  isShown: boolean;
 };
 
 export type FAQActionType = ReturnType<typeof FaqActionCreator.toggleFaq>;
@@ -28,7 +28,7 @@ function faqsReducer(faqs: Array<FaqItemType>, action: FAQActionType) {
     case FAQ_ACTION.TOGGLED: {
       return faqs.map((faq) => {
         if (faq.id === action.payload.faq.id) {
-          return { ...faq, isShown: !faqs.isShown };
+          return { ...faq, isShown: !faq.isShown };
         }
         return { ...faq, isShown: false };
       });
