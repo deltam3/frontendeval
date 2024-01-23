@@ -29,15 +29,17 @@ function App() {
     <MainEl>
       <section>
         <HeadingPrimary>Frequently asked questions</HeadingPrimary>
-        {faqs.map((faq) => {
-          return (
-            <FaqItem
-              key={faq.id}
-              onToggleFaq={handleToggleFaq}
-              faq={faq}
-            ></FaqItem>
-          );
-        })}
+        <ul>
+          {faqs.map((faq) => {
+            return (
+              <FaqItem
+                key={faq.id}
+                onToggleFaq={handleToggleFaq}
+                faq={faq}
+              ></FaqItem>
+            );
+          })}
+        </ul>
       </section>
     </MainEl>
   );
