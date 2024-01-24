@@ -23,32 +23,31 @@ function FaqItem({ faq, onToggleFaq }: Props) {
     config: { duration: "300" },
   });
 
-  //rotate animation
   const iconAnimation = useSpring({
     from: {
       transform: "rotate(0deg)",
       color: "#ffff",
     },
     to: {
-      transform: open ? "rotate(360deg)" : "rotate(0deg)",
+      transform: faq.isShown ? "rotate(360deg)" : "rotate(0deg)",
       color: open ? "#10d6f5" : "#fff",
     },
-    config: { duration: "120" },
+    config: { duration: "300" },
   });
 
   const classes = faq.isShown ? "is-nav-open" : "";
   return (
     <BasicAccordionItem className={classes} onClick={handleClick}>
-      {/* <animated.li onClick={handleClick}> */}
       <animated.i style={iconAnimation}>
         <div>{faq.isShown ? <VscArrowDown /> : <VscArrowRight />}</div>
       </animated.i>
 
       <div>
         <h1>{faq.question}</h1>
-        <h3>{faq.isShown && faq.answer}</h3>
+        <animated.div style={openAnimation}>
+          <h3>{faq.isShown && faq.answer}</h3>
+        </animated.div>
       </div>
-      {/* </animated.li> */}
     </BasicAccordionItem>
   );
 }

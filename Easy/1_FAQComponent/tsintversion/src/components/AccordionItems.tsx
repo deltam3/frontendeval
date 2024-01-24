@@ -10,7 +10,6 @@ const BasicAccordionItem = styled.li`
   min-width: 100rem;
   transition: margin 1s;
   margin: 0 0 0 10rem;
-  // height: 4.6rem;
 
   & .is-nav-open margin-left: 0;
 
@@ -18,10 +17,6 @@ const BasicAccordionItem = styled.li`
     background-color: gray;
   }
 
-  @keyframes animation-down {
-    from { height: 0}
-    to {height: 4.6rem}
-  }
 `;
 
 const HoverAccordionItem = styled(BasicAccordionItem)`
