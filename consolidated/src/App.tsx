@@ -4,9 +4,9 @@ import React from "react";
 
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import Easy from "./pages/Easy";
-import Medium from "./pages/Medium";
-import Hard from "./pages/Hard";
+import Easy from "./pages/Easy/Easy";
+import Medium from "./pages/Medium/Medium";
+import Hard from "./pages/Hard/Hard";
 
 type Props = {};
 
