@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { FAQType } from "../pages/Easy/projects/FAQ/FAQPage";
+import "./Accordion.css";
 
 // import { BasicAccordionItem } from "./AccordionItems";
 
@@ -37,9 +38,9 @@ function Accordion({ item, items, onToggleAccordionItem }: Props) {
     config: { duration: "300" },
   });
 
-  const classes = item.isOpen ? "is-nav-open" : "";
+  // const classes = item.isOpen ? "is-nav-open" : "";
   return (
-    <div className={classes} onClick={handleClick}>
+    <div className="accordion" onClick={handleClick}>
       <animated.i style={iconAnimation}>
         <div>{item.isOpen ? <VscArrowDown /> : <VscArrowRight />}</div>
       </animated.i>

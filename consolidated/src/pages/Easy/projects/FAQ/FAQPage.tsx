@@ -58,8 +58,6 @@ const FAQPage = () => {
         key={question.id}
         item={question}
         onToggleAccordionItem={onToggleAccordionItem}
-        // items={questions}
-        // setQuestions={setQuestions}
       ></Accordion>
     );
   });
