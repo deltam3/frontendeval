@@ -4,10 +4,6 @@ const Header = () => {
   return (
     <div>
       <div>
-        <h2>FrontEnd Eval</h2>
-        <p>
-          <a href="https://frontendeval.com/">frontendeval.com</a>
-        </p>
         <div>
           <div>
             <Link to="/">Home</Link>
