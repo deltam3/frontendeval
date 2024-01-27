@@ -4,9 +4,6 @@ import React from "react";
 
 import Header from "./components/Header";
 import Home from "./pages/Home";
-// import Easy from "./pages/Easy/Easy";
-// import Medium from "./pages/Medium/Medium";
-// import Hard from "./pages/Hard/Hard";
 
 const Easy = React.lazy(
   () => import(/* webpackChunkName: "easy" */ "./pages/Easy/Easy")
@@ -17,8 +14,6 @@ const Medium = React.lazy(
 const Hard = React.lazy(
   () => import(/* webpackChunkName : "hard"*/ "./pages/Hard/Hard")
 );
-
-type Props = {};
 
 function App() {
   return (

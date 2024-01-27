@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.34",
+    "p-min-delay": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.21.3",
     "react-router-dom": "^6.21.3",
+    "react-spinners": "^0.13.8",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
