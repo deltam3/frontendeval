@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 
-import pMinDelay from "p-min-delay";
+// import pMinDelay from "p-min-delay";
 import Loading from "./components/Loading";
 
-import Header from "./components/Header";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
-const Easy = React.lazy(() =>
-  pMinDelay(import(/* webpackChunkName: "easy" */ "./pages/Easy/Easy"), 1000)
+const Easy = React.lazy(
+  () => import(/* webpackChunkName: "easy" */ "./pages/Easy/Easy")
 );
 const Medium = React.lazy(
   () => import(/* webpackChunkName: "medium*/ "./pages/Medium/Medium")
@@ -23,7 +22,6 @@ function App() {
       <Router>
         <>
           <Routes>
-            {/* <Header /> */}
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/Easy" element={<Easy />} />
