@@ -42,13 +42,24 @@ const FAQPage = () => {
     flex-direction: column;
   `;
 
+  const onToggleAccordionItem = (item) => {
+    const result = questions.map((question) => {
+      if (question.id === item.id) {
+        return { ...question, isOpen: !question.isOpen };
+      }
+      return { ...question, isOpen: false };
+    });
+    setQuestions(result);
+  };
+
   const result = questions.map((question) => {
     return (
       <Accordion
         key={question.id}
         item={question}
-        items={questions}
-        setQuestions={setQuestions}
+        onToggleAccordionItem={onToggleAccordionItem}
+        // items={questions}
+        // setQuestions={setQuestions}
       ></Accordion>
     );
   });

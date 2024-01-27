@@ -1,48 +1,57 @@
+import React from "react";
+import { useState } from "react";
 import { FAQType } from "../pages/Easy/projects/FAQ/FAQPage";
-import styled from "styled-components";
 
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { HiArrowNarrowDown } from "react-icons/hi";
+// import { BasicAccordionItem } from "./AccordionItems";
+
+import { VscArrowDown, VscArrowRight } from "react-icons/vsc";
+
+import { useSpring, animated } from "@react-spring/web";
 
 type Props = {
   item: FAQType;
   items: Array<FAQType>;
-  setQuestions: (result: Array<FAQType>) => void;
+  setQuestions: () => void;
+  // onToggleFaq: (faq: FAQType) => void;
 };
 
-const Accordion = (props: Props) => {
-  const ItemBox = styled.div`
-    height: 9rem;
-    width: 20rem;
-    border: 2px solid black;
-    padding: 1rem 2rem;
-  `;
-
-  const thisId = props.item.id;
-
-  const handleClick: () => void = () => {
-    const result = props.items.map((item) => {
-      if (item.id === thisId) {
-        return { ...item, isOpen: !item.isOpen };
-      }
-      return { ...item, isOpen: false };
-    });
-    props.setQuestions(result);
+function Accordion({ item, items, onToggleAccordionItem }: Props) {
+  const handleClick = () => {
+    onToggleAccordionItem(item);
   };
+  const openAnimation = useSpring({
+    from: { opacity: "0", maxHeight: "25px" },
+    to: { opacity: "1", maxHeight: open ? "120px" : "25px" },
+    config: { duration: "300" },
+  });
 
+  const iconAnimation = useSpring({
+    from: {
+      transform: "rotate(0deg)",
+      color: "#ffff",
+    },
+    to: {
+      transform: item.isOpen ? "rotate(360deg)" : "rotate(0deg)",
+      color: item.isOpen ? "#10d6f5" : "#fff",
+    },
+    config: { duration: "300" },
+  });
+
+  const classes = item.isOpen ? "is-nav-open" : "";
   return (
-    <ItemBox onClick={handleClick}>
-      <p>
-        {props.item.isOpen ? (
-          <HiArrowNarrowDown></HiArrowNarrowDown>
-        ) : (
-          <HiArrowNarrowRight></HiArrowNarrowRight>
-        )}
-        {props.item.question}
-      </p>
-      <p>{props.item.isOpen && props.item.answer}</p>
-    </ItemBox>
+    <div className={classes} onClick={handleClick}>
+      <animated.i style={iconAnimation}>
+        <div>{item.isOpen ? <VscArrowDown /> : <VscArrowRight />}</div>
+      </animated.i>
+
+      <div>
+        <h1>{item.question}</h1>
+        <animated.div style={openAnimation}>
+          <h3>{item.isOpen && item.answer}</h3>
+        </animated.div>
+      </div>
+    </div>
   );
-};
+}
 
 export default Accordion;
