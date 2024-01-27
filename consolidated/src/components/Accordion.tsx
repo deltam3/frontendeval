@@ -3,8 +3,6 @@ import { useState } from "react";
 import { FAQType } from "../pages/Easy/projects/FAQ/FAQPage";
 import "./Accordion.css";
 
-// import { BasicAccordionItem } from "./AccordionItems";
-
 import { VscArrowDown, VscArrowRight } from "react-icons/vsc";
 
 import { useSpring, animated } from "@react-spring/web";
@@ -13,10 +11,10 @@ type Props = {
   item: FAQType;
   items: Array<FAQType>;
   setQuestions: () => void;
-  // onToggleFaq: (faq: FAQType) => void;
+  onToggleAccordionItem: (item: FAQType) => void;
 };
 
-function Accordion({ item, items, onToggleAccordionItem }: Props) {
+function Accordion({ item, onToggleAccordionItem }: Props) {
   const handleClick = () => {
     onToggleAccordionItem(item);
   };
@@ -38,7 +36,6 @@ function Accordion({ item, items, onToggleAccordionItem }: Props) {
     config: { duration: "300" },
   });
 
-  // const classes = item.isOpen ? "is-nav-open" : "";
   return (
     <div className="accordion" onClick={handleClick}>
       <animated.i style={iconAnimation}>
