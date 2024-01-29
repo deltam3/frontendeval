@@ -26,12 +26,11 @@ function Accordion({ item, onToggleAccordionItem }: Props) {
 
   const iconAnimation = useSpring({
     from: {
-      transform: "rotate(0deg)",
-      color: "#ffff",
+      transform: item.isOpen ? "rotate(0deg)" : "rotate(360deg)",
+      color: "#10d6f5",
     },
     to: {
       transform: item.isOpen ? "rotate(360deg)" : "rotate(0deg)",
-      color: item.isOpen ? "#10d6f5" : "#fff",
     },
     config: { duration: "300" },
   });
