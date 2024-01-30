@@ -6,7 +6,7 @@ type Props = {};
 function Easy({}: Props) {
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Easy</h2>
+      <h1 style={{ textAlign: "center" }}>Easy</h1>
       <FAQPage></FAQPage>
     </div>
   );

@@ -64,7 +64,7 @@ const FAQPage = () => {
 
   return (
     <FAQPageBox>
-      <h1>Frequently Asked Questions</h1>
+      <h2>Frequently Asked Questions</h2>
       {result}
     </FAQPageBox>
   );
