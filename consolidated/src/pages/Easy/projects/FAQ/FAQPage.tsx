@@ -34,6 +34,7 @@ const FAQPage = () => {
 
   const FAQPageBox = styled.div`
     max-width: 90rem;
+    height: 17rem;
     margin: 0 auto;
 
     display: flex;
@@ -64,7 +65,7 @@ const FAQPage = () => {
 
   return (
     <FAQPageBox>
-      <h2>Frequently Asked Questions</h2>
+      <h2 style={{ padding: "1.2rem" }}>Frequently Asked Questions</h2>
       {result}
     </FAQPageBox>
   );
