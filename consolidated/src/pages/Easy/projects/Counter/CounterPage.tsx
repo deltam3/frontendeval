@@ -5,7 +5,7 @@ type Props = {};
 function CounterPage({}: Props) {
   return (
     <div>
-      <h2>Countdown Timer</h2>
+      <h2 style={{ textAlign: "center" }}>Countdown Timer</h2>
     </div>
   );
 }

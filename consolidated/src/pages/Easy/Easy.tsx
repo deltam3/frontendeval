@@ -17,9 +17,22 @@ function Easy({}: Props) {
           maxWidth: "90rem",
           display: "flex",
           justifyContent: "center",
+          flexDirection: "column",
         }}
       >
         <FAQPage></FAQPage>
+        {/* <CounterPage></CounterPage> */}
+      </div>
+      <div
+        style={{
+          border: "2px solid black",
+          margin: "0 auto",
+          maxWidth: "90rem",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
         <CounterPage></CounterPage>
       </div>
     </div>
