@@ -1,5 +1,6 @@
 import React from "react";
 import FAQPage from "./projects/FAQ/FAQPage";
+import CounterPage from "./projects/Counter/CounterPage";
 
 type Props = {};
 
@@ -19,6 +20,7 @@ function Easy({}: Props) {
         }}
       >
         <FAQPage></FAQPage>
+        <CounterPage></CounterPage>
       </div>
     </div>
   );
