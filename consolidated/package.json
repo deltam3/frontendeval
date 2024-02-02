@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-spring/web": "^9.7.3",
     "@types/styled-components": "^5.1.34",
+    "classnames": "^2.5.1",
     "p-min-delay": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
