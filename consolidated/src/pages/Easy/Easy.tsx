@@ -1,6 +1,7 @@
 import React from "react";
 import FAQPage from "./projects/FAQ/FAQPage";
 import CounterPage from "./projects/Counter/CounterPage";
+import { ProjectItemContainer } from "../../components/ProjectItemContainer";
 
 type Props = {};
 
@@ -10,31 +11,12 @@ function Easy({}: Props) {
       <h1 style={{ textAlign: "center", paddingBottom: "2.4rem" }}>
         Easy Difficulty Projects
       </h1>
-      <div
-        style={{
-          border: "2px solid black",
-          margin: "0 auto",
-          maxWidth: "90rem",
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-        }}
-      >
+      <ProjectItemContainer>
         <FAQPage></FAQPage>
-        {/* <CounterPage></CounterPage> */}
-      </div>
-      <div
-        style={{
-          border: "2px solid black",
-          margin: "0 auto",
-          maxWidth: "90rem",
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-        }}
-      >
+      </ProjectItemContainer>
+      <ProjectItemContainer>
         <CounterPage></CounterPage>
-      </div>
+      </ProjectItemContainer>
     </div>
   );
 }
