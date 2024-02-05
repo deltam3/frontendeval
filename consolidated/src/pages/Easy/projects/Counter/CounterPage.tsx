@@ -2,7 +2,12 @@ import React, { useState, useRef } from "react";
 import Button from "../../../../components/Button";
 import TimerList from "./TimerList";
 
-type Props = {};
+// type Props = {};
+export type timerType = {
+  id: 1;
+};
+
+// export type
 
 const initialTimers = [{ id: 1 }, { id: 2 }];
 
