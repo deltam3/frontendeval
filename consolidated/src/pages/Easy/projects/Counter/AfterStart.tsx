@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import Button from "../../../../components/Button";
 
-import "./AfterStart.css";
-import "./Button.css";
-
 function AfterStart({ timer, setTimer, handleActive }) {
   let timerId = timer.id;
   const [isPaused, setIsPaused] = useState(false);
