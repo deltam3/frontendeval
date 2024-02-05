@@ -27,6 +27,8 @@ function Button({
 }: Props) {
   const classes = className(rest.className, {
     "bg-blue-500 text-white": primary,
+    "bg-red-500 text-white": danger,
+    "bg-green-500 text-white": success,
   });
 
   return (

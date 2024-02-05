@@ -18,7 +18,9 @@ function CounterPage({}: Props) {
     <div>
       <h2 style={{ textAlign: "center" }}>Countdown Timer</h2>
       <TimerList timers={timers} setTimers={setTimers}></TimerList>
-      <Button onClick={handleAddClick}>Add Timer</Button>
+      <Button success onClick={handleAddClick}>
+        Add Timer
+      </Button>
     </div>
   );
 }

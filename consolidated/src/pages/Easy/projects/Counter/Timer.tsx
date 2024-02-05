@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 
 import BeforeStart from "./BeforeStart";
 import AfterStart from "./AfterStart";
+import Button from "../../../../components/Button";
 
 function Timer({ id, timers, setTimers }) {
   const timerId = id;
@@ -54,7 +55,9 @@ function Timer({ id, timers, setTimers }) {
         ></BeforeStart>
       )}
       <div>
-        <button onClick={() => handleDelete()}>Delete</button>
+        <Button danger onClick={() => handleDelete()}>
+          Delete
+        </Button>
       </div>
     </li>
   );

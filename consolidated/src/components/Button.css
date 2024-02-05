@@ -2,6 +2,14 @@
   background-color: blue;
 }
 
+.bg-red-500 {
+  background-color: red;
+}
+
+.bg-green-500 {
+  background-color: green;
+}
+
 .text-white {
   color: white;
 }
