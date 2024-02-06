@@ -15,3 +15,5 @@ const DateActionCreator = {
 export type DateActionType =
   | ReturnType<typeof DateActionCreator.addDate>
   | ReturnType<typeof DateActionCreator.deleteDate>;
+
+export default DateActionCreator;

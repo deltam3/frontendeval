@@ -25,7 +25,7 @@ const DateReducer = (
         ...state,
         dateList: [
           ...state.dateList,
-          { id: new Math.random(), city: action.text, date: action.date },
+          { id: new Math.random(), city: action.city, date: action.date },
         ],
       };
     case DATE_ACTION.DELETE_DATE:

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
+import AppStore from "./redux/AppStore";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 // import rootReducer from "./modules";
@@ -13,8 +14,8 @@ import { Provider } from "react-redux";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     {/* <Provider store={store}> */}
-    {/* <Provider store={AppStore}> */}
-    <App />
-    {/* </Provider> */}
+    <Provider store={AppStore}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
