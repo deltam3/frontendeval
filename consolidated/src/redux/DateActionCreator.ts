@@ -12,6 +12,6 @@ const DateActionCreator = {
   },
 };
 
-export type ConsolidatedActionType = ReturnType<
-  typeof DateActionCreator.addDate
->;
+export type DateActionType =
+  | ReturnType<typeof DateActionCreator.addDate>
+  | ReturnType<typeof DateActionCreator.deleteDate>;
