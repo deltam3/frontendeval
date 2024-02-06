@@ -43,7 +43,5 @@ const mapDispatchToProps = (dispatch: Dispatch<UnknownAction>) => ({
   deleteDate: (id: number) => dispatch(DateActionCreator.deleteDate({ id })),
 });
 
-// export default Home;
 const HomeContainer = connect(mapStateToProps, mapDispatchToProps)(Home);
 export default HomeContainer;
-// export default connect(mapStateToProps, mapDispatchToProps)(Home);
