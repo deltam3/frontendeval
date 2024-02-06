@@ -19,7 +19,11 @@ const Home = (props: Props) => {
   `;
 
   const result = props.dateList.map((item) => {
-    return <p key={item.city}>{item.city}</p>;
+    return (
+      <p key={item.city}>
+        {item.city} {item.date.toDateString()}
+      </p>
+    );
   });
 
   return (
