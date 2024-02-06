@@ -12,4 +12,6 @@ const DateActionCreator = {
   },
 };
 
-export type TodoActionType = ReturnType<typeof DateActionCreator.addDate>;
+export type ConsolidatedActionType = ReturnType<
+  typeof DateActionCreator.addDate
+>;
