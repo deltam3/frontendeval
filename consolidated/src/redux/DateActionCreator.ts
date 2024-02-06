@@ -1,6 +1,6 @@
 export const DATE_ACTION = {
   ADD_DATE: "addDate" as const,
-  DELETE_TODO: "delete" as const,
+  DELETE_DATE: "delete" as const,
 };
 
 const DateActionCreator = {
@@ -8,7 +8,7 @@ const DateActionCreator = {
     return { type: DATE_ACTION.ADD_DATE, payload: dateItem };
   },
   deleteDate: (dateItem: { id: number }) => {
-    return { type: DATE_ACTION.DELETE_TODO, payload: dateItem };
+    return { type: DATE_ACTION.DELETE_DATE, payload: dateItem };
   },
 };
 
