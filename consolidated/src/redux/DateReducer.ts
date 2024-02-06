@@ -8,10 +8,13 @@ export type DateItemType = {
 
 export type DateStatesType = { dateList: Array<DateItemType> };
 
+const standardDate: Date = new Date();
+const LADate = new Date(standardDate - 17 * 60 * 60 * 1000);
+
 const initialState: DateStatesType = {
   dateList: [
     { id: 1, city: "Seoul", date: new Date() },
-    { id: 2, city: "Los Angeles", date: new Date() },
+    { id: 2, city: "Los Angeles", date: LADate },
   ],
 };
 
