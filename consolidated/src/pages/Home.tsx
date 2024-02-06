@@ -19,7 +19,7 @@ const Home = (props: Props) => {
   `;
 
   const result = props.dateList.map((item) => {
-    return <p>{item.city}</p>;
+    return <p key={item.city}>{item.city}</p>;
   });
 
   return (
@@ -28,8 +28,8 @@ const Home = (props: Props) => {
       <h2>FrontEnd Eval</h2>
       <p>
         <a href="https://frontendeval.com/">frontendeval.com</a>
-        {result}
       </p>
+      {result}
     </HomeContainer>
   );
 };
