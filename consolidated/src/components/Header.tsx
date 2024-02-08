@@ -32,7 +32,7 @@ const Header = () => {
             <NavLink
               to="/"
               className={({ isActive }) => {
-                return isActive ? "btn menu btn-dark" : "btn menu btn-success";
+                return isActive ? "btn menu btn-dark" : "btn btn-default";
               }}
             >
               Home
@@ -40,15 +40,15 @@ const Header = () => {
             <NavLink
               to="/Easy"
               className={({ isActive }) => {
-                return isActive ? "btn menu btn-dark" : "btn menu btn-success";
+                return isActive ? "btn menu btn-dark" : "btn btn-default";
               }}
             >
-              Easy Difficulty Projects{" "}
+              Easy Difficulty Projects
             </NavLink>
             <NavLink
               to="/Medium"
               className={({ isActive }) => {
-                return isActive ? "btn menu btn-dark" : "btn menu btn-success";
+                return isActive ? "btn menu btn-dark" : "btn btn-default";
               }}
             >
               Medium Difficulty Projects{" "}
@@ -56,7 +56,7 @@ const Header = () => {
             <NavLink
               to="/Hard"
               className={({ isActive }) => {
-                return isActive ? "btn menu btn-dark" : "btn menu btn-success";
+                return isActive ? "btn menu btn-dark" : "btn btn-default";
               }}
             >
               Hard Difficulty Projects{" "}
