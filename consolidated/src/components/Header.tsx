@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import "./Header.css";
 
 const Header = () => {
   const HeaderBox = styled.header`
@@ -27,10 +29,38 @@ const Header = () => {
       <div>
         <div>
           <UlEl>
-            <Link to="/">Home</Link>
-            <Link to="/Easy">Easy Difficulty Projects </Link>
-            <Link to="/Medium">Medium Difficulty Projects </Link>
-            <Link to="/Hard">Hard Difficulty Projects </Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) => {
+                return isActive ? "btn menu btn-dark" : "btn menu btn-success";
+              }}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/Easy"
+              className={({ isActive }) => {
+                return isActive ? "btn menu btn-dark" : "btn menu btn-success";
+              }}
+            >
+              Easy Difficulty Projects{" "}
+            </NavLink>
+            <NavLink
+              to="/Medium"
+              className={({ isActive }) => {
+                return isActive ? "btn menu btn-dark" : "btn menu btn-success";
+              }}
+            >
+              Medium Difficulty Projects{" "}
+            </NavLink>
+            <NavLink
+              to="/Hard"
+              className={({ isActive }) => {
+                return isActive ? "btn menu btn-dark" : "btn menu btn-success";
+              }}
+            >
+              Hard Difficulty Projects{" "}
+            </NavLink>
           </UlEl>
         </div>
       </div>
