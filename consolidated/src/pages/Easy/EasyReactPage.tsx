@@ -14,7 +14,7 @@ const EasyReactPage = (props: Props) => {
         <Link to="/Easy/Vanillajs">Easy Project - VanillaJS Version</Link>
         <Link to="/Easy/React">Easy Projects - React Version</Link>
       </div>
-      <h3>Easy Projects done in ReactJS</h3>
+      <h3 style={{ textAlign: "center" }}>Easy Projects done in ReactJS</h3>
       <ProjectItemContainer>
         <FAQPage></FAQPage>
       </ProjectItemContainer>

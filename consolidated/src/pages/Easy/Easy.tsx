@@ -26,6 +26,10 @@ function Easy(props: Props) {
       <h1 style={{ textAlign: "center", paddingBottom: "2.4rem" }}>
         Easy Difficulty Projects
       </h1>
+      <div style={{ textAlign: "center" }}>
+        <Link to="/Easy/Vanillajs">Easy Project - VanillaJS Version</Link>
+        <Link to="/Easy/React">Easy Projects - React Version</Link>
+      </div>
       <div style={{ textAlign: "center" }}>{result}</div>
       {/* <ProjectItemContainer>
         <FAQPage></FAQPage>
@@ -33,10 +37,7 @@ function Easy(props: Props) {
       <ProjectItemContainer>
         <CounterPage></CounterPage>
       </ProjectItemContainer> */}
-      <div style={{ textAlign: "center" }}>
-        <Link to="/Easy/Vanillajs">Easy Project - VanillaJS Version</Link>
-        <Link to="/Easy/React">Easy Projects - React Version</Link>
-      </div>
+
       {/* <EasyReactPage></EasyReactPage> */}
     </div>
   );
