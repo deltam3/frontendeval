@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 
-// import pMinDelay from "p-min-delay";
 import Loading from "./components/Loading";
 
 import Home from "./pages/Home";
