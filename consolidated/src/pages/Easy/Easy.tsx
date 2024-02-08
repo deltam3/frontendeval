@@ -3,10 +3,13 @@ import FAQPage from "./projects/FAQ/FAQPage";
 import CounterPage from "./projects/Counter/CounterPage";
 import { ProjectItemContainer } from "../../components/ProjectItemContainer";
 
+import { Link } from "react-router-dom";
+
 import DateActionCreator from "../../redux/DateActionCreator";
 import { UnknownAction, Dispatch } from "redux";
 import { connect } from "react-redux";
 import { DateStatesType, DateItemType } from "../../redux/DateReducer";
+import EasyReactPage from "./EasyReactPage";
 
 type Props = {};
 
@@ -24,12 +27,17 @@ function Easy(props: Props) {
         Easy Difficulty Projects
       </h1>
       <div style={{ textAlign: "center" }}>{result}</div>
-      <ProjectItemContainer>
+      {/* <ProjectItemContainer>
         <FAQPage></FAQPage>
       </ProjectItemContainer>
       <ProjectItemContainer>
         <CounterPage></CounterPage>
-      </ProjectItemContainer>
+      </ProjectItemContainer> */}
+      <div style={{ textAlign: "center" }}>
+        <Link to="/Easy/Vanillajs">Easy Project - VanillaJS Version</Link>
+        <Link to="/Easy/React">Easy Projects - React Version</Link>
+      </div>
+      {/* <EasyReactPage></EasyReactPage> */}
     </div>
   );
 }
