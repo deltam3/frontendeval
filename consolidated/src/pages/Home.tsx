@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 import DateActionCreator from "../redux/DateActionCreator";
@@ -9,7 +8,6 @@ import { DateStatesType, DateItemType } from "../redux/DateReducer";
 type Props = {
   dateList: Array<DateItemType>;
 };
-
 const Home = (props: Props) => {
   const HomeContainer = styled.main`
     display: flex;
