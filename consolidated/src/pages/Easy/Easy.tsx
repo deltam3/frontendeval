@@ -1,15 +1,9 @@
-import React from "react";
-import FAQPage from "./projects/FAQ/FAQPage";
-import CounterPage from "./projects/Counter/CounterPage";
-import { ProjectItemContainer } from "../../components/ProjectItemContainer";
-
 import { Link } from "react-router-dom";
 
-import DateActionCreator from "../../redux/DateActionCreator";
-import { UnknownAction, Dispatch } from "redux";
+// import DateActionCreator from "../../redux/DateActionCreator";
+// import { UnknownAction, Dispatch } from "redux";
 import { connect } from "react-redux";
 import { DateStatesType, DateItemType } from "../../redux/DateReducer";
-import EasyReactPage from "./EasyReactPage";
 
 type Props = {};
 
@@ -31,14 +25,6 @@ function Easy(props: Props) {
         <Link to="/Easy/React">Easy Projects - React Version</Link>
       </div>
       <div style={{ textAlign: "center" }}>{result}</div>
-      {/* <ProjectItemContainer>
-        <FAQPage></FAQPage>
-      </ProjectItemContainer>
-      <ProjectItemContainer>
-        <CounterPage></CounterPage>
-      </ProjectItemContainer> */}
-
-      {/* <EasyReactPage></EasyReactPage> */}
     </div>
   );
 }
@@ -47,10 +33,10 @@ const mapStateToProps = (state: DateStatesType) => ({
   dateList: state.dateList,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<UnknownAction>) => ({
-  addDate: (id: number) => dispatch(DateActionCreator.addDate({ id })),
-  deleteDate: (id: number) => dispatch(DateActionCreator.deleteDate({ id })),
-});
+// const mapDispatchToProps = (dispatch: Dispatch<UnknownAction>) => ({
+//   addDate: (id: number) => dispatch(DateActionCreator.addDate({ id })),
+//   deleteDate: (id: number) => dispatch(DateActionCreator.deleteDate({ id })),
+// });
 
-const EasyContainer = connect(mapStateToProps, mapDispatchToProps)(Easy);
+const EasyContainer = connect(mapStateToProps, null)(Easy);
 export default EasyContainer;
