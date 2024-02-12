@@ -21,18 +21,16 @@ function App() {
   return (
     <React.Suspense fallback={<Loading />}>
       <Router>
-        <>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="/Easy" element={<Easy />} />
-              <Route path="/Easy/Vanillajs" element={<EasyVanillajsPage />} />
-              <Route path="/Easy/React" element={<EasyReactPage />} />
-              <Route path="/Medium" element={<Medium />} />
-              <Route path="/Hard" element={<Hard />} />
-            </Route>
-          </Routes>
-        </>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/Easy" element={<Easy />} />
+            <Route path="/Easy/Vanillajs" element={<EasyVanillajsPage />} />
+            <Route path="/Easy/React" element={<EasyReactPage />} />
+            <Route path="/Medium" element={<Medium />} />
+            <Route path="/Hard" element={<Hard />} />
+          </Route>
+        </Routes>
       </Router>
     </React.Suspense>
   );
