@@ -4,6 +4,8 @@ import BeforeStart from "./BeforeStart";
 import AfterStart from "./AfterStart";
 import Button from "../../../../components/Button";
 
+import styled from "styled-components";
+
 function Timer({ id, timers, setTimers }) {
   const timerId = id;
   const [timer, setTimer] = useState({
@@ -38,8 +40,12 @@ function Timer({ id, timers, setTimers }) {
     setTimers(newTimers);
   };
 
+  const TimerContainer = styled.li`
+    list-style: none;
+  `;
+
   return (
-    <li className="timer-item">
+    <TimerContainer>
       {timer.isActive ? (
         <AfterStart
           timer={timer}
@@ -59,7 +65,7 @@ function Timer({ id, timers, setTimers }) {
           Delete
         </Button>
       </div>
-    </li>
+    </TimerContainer>
   );
 }
 
