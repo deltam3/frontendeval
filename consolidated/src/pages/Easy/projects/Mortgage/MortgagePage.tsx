@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 const MortgagePage = () => {
   const [loanAmount, setLoanAmount] = useState<number>(500000);
@@ -20,8 +21,13 @@ const MortgagePage = () => {
     setResult(Math.floor(result));
   };
 
+  const CalcSection = styled.section`
+    text-align: center;
+  `;
+
   return (
-    <section className="section-calc">
+    // <section className="section-calc">
+    <CalcSection>
       <form>
         <div>
           <p>Principal loan amount</p>
@@ -64,7 +70,7 @@ const MortgagePage = () => {
           <p>Your monthly mortgage payment will be ${result}</p>
         </div>
       </form>
-    </section>
+    </CalcSection>
   );
 };
 
