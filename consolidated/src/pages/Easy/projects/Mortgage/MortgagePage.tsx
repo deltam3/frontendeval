@@ -26,7 +26,6 @@ const MortgagePage = () => {
   `;
 
   return (
-    // <section className="section-calc">
     <CalcSection>
       <form>
         <div>
