@@ -20,13 +20,17 @@ function CounterPage({}: Props) {
   };
 
   return (
-    <div>
-      <h2 style={{ textAlign: "center" }}>Countdown Timer</h2>
-      <TimerList timers={timers} setTimers={setTimers}></TimerList>
-      <Button success onClick={handleAddClick}>
-        Add Timer
-      </Button>
-    </div>
+    <>
+      <div className="flex justify-center flex-col w-3/12 mx-auto">
+        <h2 className="font-bold text-3xl text-center">Countdown Timer</h2>
+        <Button success onClick={handleAddClick}>
+          Add Timer
+        </Button>
+      </div>
+      <div className="flex justify-center">
+        <TimerList timers={timers} setTimers={setTimers}></TimerList>
+      </div>
+    </>
   );
 }
 
