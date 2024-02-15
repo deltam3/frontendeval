@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../../../components/Button";
 
 const MortgagePage = () => {
@@ -20,6 +20,18 @@ const MortgagePage = () => {
 
     setResult(Math.floor(result));
   };
+
+  useEffect(() => {
+    const monthlyRate = (interestRate * 1) / 100 / 12;
+    const totalMonths = loanLength * 12;
+
+    const result =
+      loanAmount *
+      ((monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+        (Math.pow(1 + monthlyRate, totalMonths) - 1));
+
+    setResult(Math.floor(result));
+  }, []);
 
   return (
     <section className="text-center">
