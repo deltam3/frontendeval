@@ -30,8 +30,9 @@ const MortgagePage = () => {
     <CalcSection>
       <form>
         <h2 className="text-3xl">Mortgage Calculator</h2>
-        <div>
-          <p className="text-2xl">Principal loan amount</p>
+        <div className="flex justify-center gap-2">
+          <p className="text-2xl">Principal loan amount : </p>
+          <p>$</p>
           <input
             type="number"
             placeholder="500000"
@@ -40,8 +41,8 @@ const MortgagePage = () => {
             onChange={(e) => setLoanAmount(+e.target.value)}
           ></input>
         </div>
-        <div>
-          <p className="text-2xl">Interest rate</p>
+        <div className="flex justify-center align-middle gap-2">
+          <p className="text-2xl">Interest rate : </p>
           <div>
             <input
               type="number"
@@ -52,8 +53,8 @@ const MortgagePage = () => {
             <span>%</span>
           </div>
         </div>
-        <div>
-          <p className="text-2xl">Length of Loan</p>
+        <div className="flex justify-center gap-2">
+          <p className="text-2xl">Length of Loan : </p>
           <div>
             <input
               type="number"
