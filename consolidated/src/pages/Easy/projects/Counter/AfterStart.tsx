@@ -52,15 +52,15 @@ function AfterStart({ timer, setTimer, handleActive }) {
   };
 
   return (
-    <section className="flex">
-      <div className="flex">
+    <section>
+      <div className="flex justify-center">
         <div>{timer.hour}</div>
         <span>:</span>
         <div>{timer.min < 10 ? "0" + timer.min : timer.min}</div>
         <span>:</span>
         <div>{timer.sec < 10 ? "0" + timer.sec : timer.sec}</div>
       </div>
-      <div>
+      <div className="flex justify-center">
         <Button primary onClick={(e) => handlePause(e)}>
           Pause
         </Button>
