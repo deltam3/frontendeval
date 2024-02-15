@@ -28,6 +28,7 @@ const MortgagePage = () => {
   return (
     <CalcSection>
       <form>
+        <h2 className="text-3xl">Mortgage Calculator</h2>
         <div>
           <p>Principal loan amount</p>
           <input
