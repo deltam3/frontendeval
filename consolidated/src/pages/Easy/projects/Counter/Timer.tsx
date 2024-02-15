@@ -58,15 +58,18 @@ function Timer({ id, timers, setTimers }) {
           timer={timer}
           setTimer={setTimer}
           handleActive={handleActive}
+          handleDelete={handleDelete}
         ></BeforeStart>
       )}
-      <div>
+      {/* <div className="inline-block">
         <Button danger onClick={() => handleDelete()}>
           Delete
         </Button>
-      </div>
+      </div> */}
     </TimerContainer>
   );
 }
 
 export default Timer;
+
+// inline-block flex justify-center

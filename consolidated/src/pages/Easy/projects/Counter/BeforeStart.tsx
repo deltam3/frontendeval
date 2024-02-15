@@ -2,7 +2,7 @@ import React from "react";
 
 import Button from "../../../../components/Button";
 
-function BeforeStart({ timer, setTimer, handleActive }) {
+function BeforeStart({ timer, setTimer, handleActive, handleDelete }) {
   const handleClick = (e) => {
     if (
       typeof timer.hour === "number" &&
@@ -31,42 +31,53 @@ function BeforeStart({ timer, setTimer, handleActive }) {
     });
   };
 
+  const handleDeleteBtn = (timer) => {
+    handleDelete(timer.id);
+  };
+
   return (
-    <form className="form-timer">
-      <div>
-        <input
-          type="number"
-          placeholder="HH"
-          value={timer.hour}
-          onChange={(e) => handleHourChange(e)}
-        ></input>
+    <>
+      <form className="flex">
+        <div>
+          <input
+            type="number"
+            placeholder="HH"
+            value={timer.hour}
+            onChange={(e) => handleHourChange(e)}
+          ></input>
+        </div>
+        <div>
+          <p>:</p>
+        </div>
+        <div>
+          <input
+            type="number"
+            placeholder="MM"
+            value={timer.min}
+            onChange={(e) => handleMinChange(e)}
+          ></input>
+        </div>
+        <div>
+          <p>:</p>
+        </div>
+        <div>
+          <input
+            type="number"
+            placeholder="SS"
+            value={timer.sec}
+            onChange={(e) => handleSecChange(e)}
+          ></input>
+        </div>
+      </form>
+      <div className="flex justify-center">
+        <Button primary onClick={handleClick}>
+          Start
+        </Button>
+        <Button danger onClick={() => handleDeleteBtn(timer)}>
+          Delete
+        </Button>
       </div>
-      <div>
-        <p>:</p>
-      </div>
-      <div>
-        <input
-          type="number"
-          placeholder="MM"
-          value={timer.min}
-          onChange={(e) => handleMinChange(e)}
-        ></input>
-      </div>
-      <div>
-        <p>:</p>
-      </div>
-      <div>
-        <input
-          type="number"
-          placeholder="SS"
-          value={timer.sec}
-          onChange={(e) => handleSecChange(e)}
-        ></input>
-      </div>
-      <Button primary onClick={handleClick}>
-        Start
-      </Button>
-    </form>
+    </>
   );
 }
 

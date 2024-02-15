@@ -52,8 +52,8 @@ function AfterStart({ timer, setTimer, handleActive }) {
   };
 
   return (
-    <section className="section-afterstart">
-      <div className="afterstart-times">
+    <section className="flex">
+      <div className="flex">
         <div>{timer.hour}</div>
         <span>:</span>
         <div>{timer.min < 10 ? "0" + timer.min : timer.min}</div>
