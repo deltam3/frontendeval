@@ -1,6 +1,12 @@
+import { timerType } from "./CounterPage";
 import Timer from "./Timer";
 
-function TimerList({ timers, setTimers }) {
+type PropsType = {
+  timers: Array<timerType>;
+  setTimers: () => void;
+};
+
+function TimerList({ timers, setTimers }: PropsType) {
   return (
     <ul className="flex flex-col gap-6">
       {timers.map((timer) => {
