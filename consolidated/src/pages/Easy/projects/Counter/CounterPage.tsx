@@ -2,17 +2,14 @@ import React, { useState, useRef } from "react";
 import Button from "../../../../components/Button";
 import TimerList from "./TimerList";
 
-// type Props = {};
 export type timerType = {
-  id: 1;
+  id: number;
 };
-
-// export type
 
 const initialTimers = [{ id: 1 }, { id: 2 }];
 
-function CounterPage({}: Props) {
-  const [timers, setTimers] = useState(initialTimers);
+function CounterPage() {
+  const [timers, setTimers] = useState<Array<timerType>>(initialTimers);
   const currentId = useRef(2);
   const handleAddClick = () => {
     const result = [...timers, { id: currentId.current + 1 }];
