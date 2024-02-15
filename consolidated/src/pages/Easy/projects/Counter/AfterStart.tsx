@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "../../../../components/Button";
 
-function AfterStart({ timer, setTimer, handleActive }) {
+function AfterStart({ timer, setTimer, handleActive, handleDelete }) {
   let timerId = timer.id;
   const [isPaused, setIsPaused] = useState(false);
   useEffect(() => {
@@ -51,6 +51,10 @@ function AfterStart({ timer, setTimer, handleActive }) {
     setIsPaused((isPaused) => !isPaused);
   };
 
+  const handleDeleteBtn = (timer) => {
+    handleDelete(timer.id);
+  };
+
   return (
     <section>
       <div className="flex justify-center">
@@ -61,11 +65,14 @@ function AfterStart({ timer, setTimer, handleActive }) {
         <div>{timer.sec < 10 ? "0" + timer.sec : timer.sec}</div>
       </div>
       <div className="flex justify-center">
-        <Button primary onClick={(e) => handlePause(e)}>
+        <Button success onClick={(e) => handlePause(e)}>
           Pause
         </Button>
         <Button primary onClick={(e) => handleActive(e)}>
           Reset
+        </Button>
+        <Button danger onClick={() => handleDeleteBtn(timer)}>
+          Delete
         </Button>
       </div>
     </section>

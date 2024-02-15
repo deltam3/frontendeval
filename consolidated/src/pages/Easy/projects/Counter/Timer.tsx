@@ -51,6 +51,7 @@ function Timer({ id, timers, setTimers }) {
           timer={timer}
           setTimer={setTimer}
           handleActive={handleActive}
+          handleDelete={handleDelete}
         ></AfterStart>
       ) : (
         <BeforeStart
