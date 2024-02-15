@@ -1,9 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 
-type Props = {};
+const MortgagePage = () => {
+  const [loanAmount, setLoanAmount] = useState<number>(500000);
+  const [interestRate, setInterestRate] = useState<number>(3);
+  const [loanLength, setLoanLength] = useState<number>(30);
 
-const MortgagePage = (props: Props) => {
-  return <div>MortgagePage</div>;
+  const [result, setResult] = useState<number>(0);
+
+  const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const monthlyRate = (interestRate * 1) / 100 / 12;
+    const totalMonths = loanLength * 12;
+
+    const result =
+      loanAmount *
+      ((monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+        (Math.pow(1 + monthlyRate, totalMonths) - 1));
+
+    setResult(Math.floor(result));
+  };
+
+  return (
+    <section className="section-calc">
+      <form>
+        <div>
+          <p>Principal loan amount</p>
+          <input
+            type="number"
+            placeholder="500000"
+            value={loanAmount}
+            className="principal-amount"
+            onChange={(e) => setLoanAmount(+e.target.value)}
+          ></input>
+        </div>
+        <div>
+          <p>Interest rate</p>
+          <div>
+            <input
+              type="number"
+              placeholder="3"
+              value={interestRate}
+              onChange={(e) => setInterestRate(+e.target.value)}
+            ></input>
+            <span>%</span>
+          </div>
+        </div>
+        <div>
+          <p>Length of Loan</p>
+          <div>
+            <input
+              type="number"
+              placeholder="30"
+              value={loanLength}
+              onChange={(e) => setLoanLength(+e.target.value)}
+            ></input>
+            <span>Years</span>
+          </div>
+        </div>
+        <div>
+          <button onClick={handleSubmit}>Calculate</button>
+        </div>
+        <div>
+          <p>Your monthly mortgage payment will be ${result}</p>
+        </div>
+      </form>
+    </section>
+  );
 };
 
 export default MortgagePage;
