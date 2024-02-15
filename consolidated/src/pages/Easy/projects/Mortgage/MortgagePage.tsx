@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Button from "../../../../components/Button";
 
 const MortgagePage = () => {
   const [loanAmount, setLoanAmount] = useState<number>(500000);
@@ -64,10 +65,14 @@ const MortgagePage = () => {
           </div>
         </div>
         <div>
-          <button onClick={handleSubmit}>Calculate</button>
+          <Button primary onClick={handleSubmit}>
+            Calculate
+          </Button>
         </div>
         <div>
-          <p>Your monthly mortgage payment will be ${result}</p>
+          <p className="text-4xl">
+            Your monthly mortgage payment will be ${result}
+          </p>
         </div>
       </form>
     </CalcSection>
