@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 import Button from "../../../../components/Button";
 
 const MortgagePage = () => {
@@ -22,12 +22,8 @@ const MortgagePage = () => {
     setResult(Math.floor(result));
   };
 
-  const CalcSection = styled.section`
-    text-align: center;
-  `;
-
   return (
-    <CalcSection>
+    <section className="text-center">
       <form>
         <h2 className="text-3xl">Mortgage Calculator</h2>
         <div className="flex justify-center gap-2">
@@ -76,7 +72,7 @@ const MortgagePage = () => {
           </p>
         </div>
       </form>
-    </CalcSection>
+    </section>
   );
 };
 
