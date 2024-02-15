@@ -2,7 +2,7 @@ import Timer from "./Timer";
 
 function TimerList({ timers, setTimers }) {
   return (
-    <ul>
+    <ul className="flex flex-col gap-6">
       {timers.map((timer) => {
         return (
           <Timer

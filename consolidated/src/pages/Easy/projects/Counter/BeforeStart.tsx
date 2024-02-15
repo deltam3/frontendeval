@@ -36,7 +36,7 @@ function BeforeStart({ timer, setTimer, handleActive, handleDelete }) {
   };
 
   return (
-    <>
+    <div className="flex flex-col gap-2">
       <form className="flex">
         <div>
           <input
@@ -77,7 +77,7 @@ function BeforeStart({ timer, setTimer, handleActive, handleDelete }) {
           Delete
         </Button>
       </div>
-    </>
+    </div>
   );
 }
 
