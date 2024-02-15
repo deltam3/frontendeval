@@ -5,6 +5,7 @@ import CounterPage from "./projects/Counter/CounterPage";
 import "./../../components/subpage.css";
 
 import { NavLink } from "react-router-dom";
+import MortgagePage from "./projects/Mortgage/MortgagePage";
 
 type Props = {};
 
@@ -35,6 +36,9 @@ const EasyReactPage = (props: Props) => {
       </ProjectItemContainer>
       <ProjectItemContainer>
         <CounterPage></CounterPage>
+      </ProjectItemContainer>
+      <ProjectItemContainer>
+        <MortgagePage></MortgagePage>
       </ProjectItemContainer>
     </div>
   );
