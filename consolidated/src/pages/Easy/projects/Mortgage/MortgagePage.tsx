@@ -30,7 +30,7 @@ const MortgagePage = () => {
       <form>
         <h2 className="text-3xl">Mortgage Calculator</h2>
         <div>
-          <p>Principal loan amount</p>
+          <p className="text-2xl">Principal loan amount</p>
           <input
             type="number"
             placeholder="500000"
@@ -40,7 +40,7 @@ const MortgagePage = () => {
           ></input>
         </div>
         <div>
-          <p>Interest rate</p>
+          <p className="text-2xl">Interest rate</p>
           <div>
             <input
               type="number"
@@ -52,7 +52,7 @@ const MortgagePage = () => {
           </div>
         </div>
         <div>
-          <p>Length of Loan</p>
+          <p className="text-2xl">Length of Loan</p>
           <div>
             <input
               type="number"
