@@ -6,6 +6,7 @@ import "./../../components/subpage.css";
 
 import { NavLink } from "react-router-dom";
 import MortgagePage from "./projects/Mortgage/MortgagePage";
+import ModalPage from "./projects/Modal/ModalPage";
 
 type Props = {};
 
@@ -39,6 +40,9 @@ const EasyReactPage = (props: Props) => {
       </ProjectItemContainer>
       <ProjectItemContainer>
         <MortgagePage></MortgagePage>
+      </ProjectItemContainer>
+      <ProjectItemContainer>
+        <ModalPage></ModalPage>
       </ProjectItemContainer>
     </div>
   );
