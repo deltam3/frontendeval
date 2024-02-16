@@ -6,6 +6,7 @@
   padding: 1rem 2rem;
   color: #555;
   min-width: 100rem;
+  min-height: 4rem;
   transition: margin 1s;
   margin: 0 0 0 10rem;
 }

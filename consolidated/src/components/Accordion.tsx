@@ -37,6 +37,10 @@ function Accordion({ item, onToggleAccordionItem }: Props) {
 
   return (
     <div className="accordion" onClick={handleClick}>
+      {/* <div
+      className="flex align-center gap-2 list-none py-4 px-8 text-zinc-800 max-w-96"
+      onClick={handleClick}
+    > */}
       <animated.i style={iconAnimation}>
         <div>{item.isOpen ? <VscArrowDown /> : <VscArrowRight />}</div>
       </animated.i>
