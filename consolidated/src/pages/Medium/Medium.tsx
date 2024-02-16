@@ -7,10 +7,10 @@ function Medium() {
         Medium Difficulty Projects
       </h1>
       <div className="flex justify-center gap-10 my-4">
-        <Link to="/Easy/Vanillajs" className="btn-deafult btn">
+        <Link to="/Medium/Vanillajs" className="btn-deafult btn">
           Easy Project - VanillaJS Version
         </Link>
-        <Link to="/Easy/React" className="btn-default btn">
+        <Link to="/Medium/React" className="btn-default btn">
           Easy Proejcts - React Version
         </Link>
       </div>
