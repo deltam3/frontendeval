@@ -52,7 +52,7 @@ const ModalPage = () => {
 
   return (
     <div>
-      <div className="width-10 margin-auto">
+      <div className="flex justify-center width-10 margin-auto">
         <Button onClick={handleClick} primary>
           Show Modal
         </Button>
