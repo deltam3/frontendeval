@@ -17,12 +17,16 @@ function Easy(props: Props) {
   });
   return (
     <div>
-      <h1 style={{ textAlign: "center", paddingBottom: "2.4rem" }}>
+      <h1 style={{ textAlign: "center", paddingBottom: "1.2rem" }}>
         Easy Difficulty Projects
       </h1>
-      <div style={{ textAlign: "center" }}>
-        <Link to="/Easy/Vanillajs">Easy Project - VanillaJS Version</Link>
-        <Link to="/Easy/React">Easy Projects - React Version</Link>
+      <div className="flex justify-center gap-10 my-4">
+        <Link to="/Easy/Vanillajs" className="btn-default btn">
+          Easy Project - VanillaJS Version
+        </Link>
+        <Link to="/Easy/React" className="btn-default btn">
+          Easy Projects - React Version
+        </Link>
       </div>
       <div style={{ textAlign: "center" }}>{result}</div>
     </div>
