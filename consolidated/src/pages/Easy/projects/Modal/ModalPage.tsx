@@ -51,7 +51,8 @@ const ModalPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="my-6">
+      <h2 className="text-3xl text-center">Modal Overlay</h2>
       <div className="flex justify-center width-10 margin-auto">
         <Button onClick={handleClick} primary>
           Show Modal
