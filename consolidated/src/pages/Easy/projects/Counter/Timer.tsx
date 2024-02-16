@@ -62,11 +62,6 @@ function Timer({ id, timers, setTimers }) {
           handleDelete={handleDelete}
         ></BeforeStart>
       )}
-      {/* <div className="inline-block">
-        <Button danger onClick={() => handleDelete()}>
-          Delete
-        </Button>
-      </div> */}
     </TimerContainer>
   );
 }
