@@ -6,7 +6,7 @@ type Props = {};
 const MediumReactPage = (props: Props) => {
   return (
     <div>
-      <div>
+      <div className="flex justify-center">
         <NavLink
           to="/Medium/Vanillajs"
           className={({ isActive }) =>
