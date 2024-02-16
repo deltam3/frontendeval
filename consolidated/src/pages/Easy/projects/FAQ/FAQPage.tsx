@@ -65,7 +65,7 @@ const FAQPage = () => {
 
   return (
     <FAQPageBox>
-      <h2 style={{ padding: "1.2rem" }}>Frequently Asked Questions</h2>
+      <h2 className="text-3xl">Frequently Asked Questions</h2>
       {result}
     </FAQPageBox>
   );
