@@ -8,6 +8,7 @@ import Layout from "./components/Layout";
 import EasyVanillajsPage from "./pages/Easy/EasyVanillajsPage";
 import EasyReactPage from "./pages/Easy/EasyReactPage";
 import MediumVanillajsPage from "./pages/Medium/MediumVanillajsPage";
+import MediumReactPage from "./pages/Medium/MediumReactPage";
 const Easy = React.lazy(
   () => import(/* webpackChunkName: "easy" */ "./pages/Easy/Easy")
 );
@@ -30,6 +31,7 @@ function App() {
             <Route path="/Easy/React" element={<EasyReactPage />} />
             <Route path="/Medium" element={<Medium />} />
             <Route path="/Medium/Vanillajs" element={<MediumVanillajsPage />} />
+            <Route path="/Medium/React" element={<MediumReactPage />} />
             <Route path="/Hard" element={<Hard />} />
           </Route>
         </Routes>
