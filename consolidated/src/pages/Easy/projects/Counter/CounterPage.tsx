@@ -17,7 +17,7 @@ function CounterPage() {
   };
 
   return (
-    <section className="flex flex-col gap-8">
+    <section className="flex flex-col gap-8 my-6">
       <div className="flex justify-center flex-col w-3/12 mx-auto gap-2">
         <h2 className="font-bold text-3xl text-center">Countdown Timer</h2>
         <Button success onClick={handleAddClick}>
