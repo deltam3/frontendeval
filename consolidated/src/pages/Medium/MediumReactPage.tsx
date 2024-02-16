@@ -20,7 +20,9 @@ const MediumReactPage = (props: Props) => {
           className={({ isActive }) =>
             isActive ? "bg-dark btn" : "btn-default btn"
           }
-        ></NavLink>
+        >
+          Medium Project - React Version
+        </NavLink>
       </div>
     </div>
   );
