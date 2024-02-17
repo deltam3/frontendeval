@@ -13,7 +13,7 @@ const MemoryPage = (props: Props) => {
     setShowModal(false);
   };
 
-  const handleDifficultySelect = (number) => {
+  const handleDifficultySelect = (number: any) => {
     setShowModal(false);
     setDifficulty(number);
   };
