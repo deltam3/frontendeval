@@ -1,8 +1,22 @@
 import React from "react";
+import "./GameItem.css"
 
-type Props = {};
+type Props = {
+  item:
+};
 
-const GameItem = (props: Props) => {
+const GameItem = ({
+  item,
+  items,
+  setItems,
+  revealedCardCount,
+  cardItemOne,
+  cardItemTwo,
+}: Props) => {
+  const thisId  = item.id;
+
+
+
   return <div>GameItem</div>;
 };
 

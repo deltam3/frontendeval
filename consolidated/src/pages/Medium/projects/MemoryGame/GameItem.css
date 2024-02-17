@@ -1,0 +1,22 @@
+.card-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 4rem;
+  height: 4rem;
+  /* background-color: #555; */
+}
+
+.card-revealed-true {
+  background-color: white;
+}
+
+.card-revealed-false {
+  background-color: #555;
+}
+
+.card-paired-true {
+  visibility: hidden;
+  pointer-events: none;
+}
