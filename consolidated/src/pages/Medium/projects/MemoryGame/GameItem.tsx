@@ -35,11 +35,25 @@ const GameItem = ({
           }
           return item 
         })
+        revealedCardCount.current = 2;
+        setItems(result)
+      }
+      if (cardItemTwo.current !== undefined) {
+        return;
       }
     })
   }
 
-  return <div>GameItem</div>;
+  const classes = item?.revealed ? "card-item card-revealed-true" : "card-item card-revealed-false"
+  const pairedClasses = item?.paired ? "card-paired-true" : ""
+
+  return (
+    <div onClick={handleClick} className={classes + " " + pairedClasses}>
+      <div>
+        <h1>{item.number}</h1>
+      </div>
+    </div>
+  )
 };
 
 export default GameItem;
