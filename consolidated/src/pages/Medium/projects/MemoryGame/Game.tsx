@@ -52,6 +52,50 @@ const Game = ({ difficulty }: Props) => {
     setGameItems(shuffle(result));
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (
+        cardItemOne.current?.number !== undefined &&
+        cardItemTwo.current?.number !== undefined &&
+        cardItemOne.current?.number === cardItemTwo.current?.number
+      ) {
+        const result = gameItems.map((item) => {
+          if (
+            item?.id === cardItemOne.current?.id ||
+            item?.id === cardItemTwo.current?.id
+          ) {
+            return { ...item, revealed: false, paired: true };
+          }
+          return item;
+        });
+        cardItemOne.current = undefined;
+        cardItemTwo.current = undefined;
+        revealedCardsCount.current = 0;
+
+        setGameItems(result);
+      }
+      if (
+        cardItemOne.current?.number !== undefined &&
+        cardItemTwo.current?.number !== undefined &&
+        cardItemOne.current?.number !== cardItemTwo.current?.number
+      ) {
+        const result = gameItems.map((item) => {
+          if (
+            item.id === cardItemOne.current?.id ||
+            item.id === cardItemTwo.current?.id
+          ) {
+            return { ...item, revealed: false, paired: false };
+          }
+          return item;
+        });
+        cardItemOne.current = undefined;
+        cardItemTwo.current = undefined;
+        revealedCardsCount.current = 0;
+        setGameItems(result);
+      }
+    }, 2000);
+  });
+
   return (
     <div>
       <div className={gameList}>
