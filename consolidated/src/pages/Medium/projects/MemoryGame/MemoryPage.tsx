@@ -43,12 +43,12 @@ const MemoryPage = (props: Props) => {
   return (
     <section>
       <header>
-        <h2 className="text-3xl">Memory Game</h2>
+        <h2 className="text-3xl text-center">Memory Game</h2>
       </header>
       {showModal ? (
         modal
       ) : (
-        <div>
+        <div className="text-center">
           <Button onClick={handleStartButton} primary>
             Start Game
           </Button>
