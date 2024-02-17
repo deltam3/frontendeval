@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Game.css";
+import GameItem from "./GameItem";
 
 type Props = {
   difficulty: boolean | number;
