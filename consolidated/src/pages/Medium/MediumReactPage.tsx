@@ -24,6 +24,9 @@ const MediumReactPage = (props: Props) => {
           Medium Project - React Version
         </NavLink>
       </div>
+      <h1 className="text-center my-2 mx-4 text-2xl">
+        Medium Projects done in ReactJS
+      </h1>
     </div>
   );
 };
