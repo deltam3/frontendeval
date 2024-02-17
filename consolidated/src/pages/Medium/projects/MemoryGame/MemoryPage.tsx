@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../../../components/Button";
 import Modal from "../../../../components/Modal";
+import Game from "./Game";
 
 type Props = {};
 
@@ -40,9 +41,21 @@ const MemoryPage = (props: Props) => {
   );
 
   return (
-    <div>
-      <h2>MemoryPage</h2>
-    </div>
+    <section>
+      <header>
+        <h2>Memory Game</h2>
+      </header>
+      {showModal ? (
+        modal
+      ) : (
+        <div>
+          <Button onClick={handleStartButton} primary>
+            Start Game
+          </Button>
+        </div>
+      )}
+      {difficulty && <Game difficulty={difficulty}></Game>}
+    </section>
   );
 };
 
