@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { ProjectItemContainer } from "../../components/ProjectItemContainer";
+import MemoryPage from "./projects/MemoryGame/MemoryPage";
 
 type Props = {};
 
@@ -28,7 +29,9 @@ const MediumReactPage = (props: Props) => {
       <h1 className="text-center my-2 mx-4 text-2xl">
         Medium Projects done in ReactJS
       </h1>
-      <ProjectItemContainer></ProjectItemContainer>
+      <ProjectItemContainer>
+        <MemoryPage></MemoryPage>
+      </ProjectItemContainer>
     </div>
   );
 };
