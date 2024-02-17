@@ -22,10 +22,23 @@ const Game = ({ difficulty }: Props) => {
     gameList = "gamelist-hard";
   }
 
-  // return <div>Game</div>;
   return (
     <div>
-      <div className={gameList}></div>
+      <div className={gameList}>
+        {gameItems.map((gameItem) => {
+          return (
+            <GameItem
+              key={gameItem.id}
+              item={gameItem}
+              items={gameItems}
+              setItems={setGameItems}
+              revealedCardsCount={revealedCardsCount}
+              cardItemOne={cardItemOne}
+              cardItemTwo={cardItemTwo}
+            ></GameItem>
+          );
+        })}
+      </div>
     </div>
   );
 };
