@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-type Props = {};
+type Props = {
+  difficulty: boolean | number;
+};
 
-const Game = (props: Props) => {
+const Game = ({ difficulty }: Props) => {
   return <div>Game</div>;
 };
 
