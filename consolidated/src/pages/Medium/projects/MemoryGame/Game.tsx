@@ -22,6 +22,36 @@ const Game = ({ difficulty }: Props) => {
     gameList = "gamelist-hard";
   }
 
+  useEffect(() => {
+    let result = [];
+    let id = 1;
+    for (let i = 1; i <= totalNumberGameItems / 2; i++) {
+      result.push({ id: id, number: i, revealed: false, paired: false });
+      id += 1;
+      result.push({ id: id, number: i, revealed: false, paired: false });
+      id += 1;
+    }
+
+    function shuffle(array) {
+      let currentIndex = array.length,
+        randomIndex;
+
+      while (currentIndex > 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex],
+          array[currentIndex],
+        ];
+      }
+
+      return array;
+    }
+
+    setGameItems(shuffle(result));
+  }, []);
+
   return (
     <div>
       <div className={gameList}>
