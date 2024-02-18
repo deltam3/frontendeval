@@ -1,7 +1,15 @@
 import React from "react";
 import "./GameItem.css";
+import { GameItemType } from "./Game";
 
-type Props = {};
+type Props = {
+  item: GameItemType;
+  items: Array<GameItemType>;
+  setItems: () => void;
+  revealedCardCount: number;
+  cardItemOne: any;
+  cardItemTwo: any;
+};
 
 const GameItem = ({
   item,

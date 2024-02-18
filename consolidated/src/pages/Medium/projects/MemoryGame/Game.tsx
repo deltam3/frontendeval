@@ -6,6 +6,13 @@ type Props = {
   difficulty: boolean | number;
 };
 
+export type GameItemType = {
+  id: number;
+  number: number;
+  revealed: boolean;
+  paired: boolean;
+};
+
 const Game = ({ difficulty }: Props) => {
   const totalNumberGameItems = difficulty * difficulty;
   const [gameItems, setGameItems] = useState([]);
