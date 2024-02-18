@@ -17,9 +17,10 @@ const Game = ({ difficulty }: Props) => {
   const totalNumberGameItems = difficulty * difficulty;
   const [gameItems, setGameItems] = useState([]);
 
-  const revealedCardsCount = useRef(0);
+  let revealedCardsCount = useRef(0);
   const cardItemOne = useRef(undefined);
   const cardItemTwo = useRef(undefined);
+  console.log(revealedCardsCount.current);
 
   let gameList;
   if (difficulty === 4) {
@@ -29,6 +30,12 @@ const Game = ({ difficulty }: Props) => {
   } else {
     gameList = "gamelist-hard";
   }
+
+  useEffect(() => {
+    console.log(`revealedCardsCount: ${revealedCardsCount.current}`);
+    console.log(`cardItemOne: ${cardItemOne.current}`);
+    console.log(`cardItemTwo: ${cardItemTwo.current}`);
+  });
 
   useEffect(() => {
     let result = [];

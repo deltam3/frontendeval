@@ -5,7 +5,7 @@ import { GameItemType } from "./Game";
 type Props = {
   item: GameItemType;
   items: Array<GameItemType>;
-  setItems: () => void;
+  setItems: (items: Array<GameItemType>) => void;
   revealedCardCount: number;
   cardItemOne: any;
   cardItemTwo: any;
@@ -22,7 +22,7 @@ const GameItem = ({
   const thisId = item.id;
 
   const handleClick = () => {
-    if (revealedCardCount.current === 0) {
+    if (revealedCardCount === 0) {
       const result = items.map((item) => {
         if (item.id === thisId) {
           cardItemOne.current = item;
@@ -30,10 +30,11 @@ const GameItem = ({
         }
         return item;
       });
-      revealedCardCount.current = 1;
+      revealedCardCount = 1;
       setItems(result);
-    } else if (revealedCardCount.current === 1) {
-      if (cardItemTwo.current === undefined) {
+    } else if (revealedCardCount === 1) {
+      if (cardItemTwo.current.number === undefined) {
+        console.log(revealedCardCount);
         const result = items.map((item) => {
           if (item.id === thisId) {
             cardItemTwo.current = item;
@@ -41,10 +42,10 @@ const GameItem = ({
           }
           return item;
         });
-        revealedCardCount.current = 2;
+        revealedCardCount = 2;
         setItems(result);
       }
-      if (cardItemTwo.current !== undefined) {
+      if (cardItemTwo.current.number !== undefined) {
         return;
       }
     }
