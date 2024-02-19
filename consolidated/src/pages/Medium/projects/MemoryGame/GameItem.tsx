@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MutableRefObject } from "react";
 import "./GameItem.css";
 import { GameItemType } from "./Game";
 
@@ -6,7 +6,7 @@ type Props = {
   item: GameItemType;
   items: Array<GameItemType>;
   setItems: (items: Array<GameItemType>) => void;
-  revealedCardCount: number;
+  revealedCardsCount: MutableRefObject<number>;
   cardItemOne: any;
   cardItemTwo: any;
 };
@@ -15,14 +15,14 @@ const GameItem = ({
   item,
   items,
   setItems,
-  revealedCardCount,
+  revealedCardsCount,
   cardItemOne,
   cardItemTwo,
 }: Props) => {
   const thisId = item.id;
 
   const handleClick = () => {
-    if (revealedCardCount === 0) {
+    if (revealedCardsCount.current === 0) {
       const result = items.map((item) => {
         if (item.id === thisId) {
           cardItemOne.current = item;
@@ -30,11 +30,11 @@ const GameItem = ({
         }
         return item;
       });
-      revealedCardCount = 1;
+      revealedCardsCount.current = 1;
       setItems(result);
-    } else if (revealedCardCount === 1) {
+    } else if (revealedCardsCount.current === 1) {
       if (cardItemTwo.current.number === undefined) {
-        console.log(revealedCardCount);
+        console.log(revealedCardsCount);
         const result = items.map((item) => {
           if (item.id === thisId) {
             cardItemTwo.current = item;
@@ -42,7 +42,7 @@ const GameItem = ({
           }
           return item;
         });
-        revealedCardCount = 2;
+        revealedCardsCount.current = 2;
         setItems(result);
       }
       if (cardItemTwo.current.number !== undefined) {
