@@ -31,9 +31,9 @@ const Game = ({ difficulty }: Props) => {
   }
 
   useEffect(() => {
-    console.log(revealedCardsCount.current);
-    console.log(cardItemOne.current);
-    console.log(cardItemTwo.current);
+    console.log(`revealedCardsCount: ${revealedCardsCount.current}`);
+    console.log(`cardItemOne: ${cardItemOne.current}`);
+    console.log(`cardItemTwo: ${cardItemTwo.current}`);
   });
 
   // initial setup when the difficulty is set
@@ -72,7 +72,7 @@ const Game = ({ difficulty }: Props) => {
       if (
         cardItemOne.current?.number !== undefined &&
         cardItemTwo.current?.number !== undefined &&
-        cardItemOne.current?.number === cardItemTwo.current?.number
+        cardItemOne.current?.number === cardItemTwo.current.number
       ) {
         const result = gameItems.map((item) => {
           if (

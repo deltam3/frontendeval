@@ -33,7 +33,7 @@ const GameItem = ({
       revealedCardsCount.current = 1;
       setItems(result);
     } else if (revealedCardsCount.current === 1) {
-      if (cardItemTwo.current.number === undefined) {
+      if (cardItemTwo.current === undefined) {
         const result = items.map((item) => {
           if (item.id === thisId) {
             cardItemTwo.current = item;
@@ -45,7 +45,7 @@ const GameItem = ({
         setItems(result);
       }
       // if the user clicks on the same card or another card during the animation, prevent any action
-      if (cardItemTwo.current.number !== undefined) {
+      if (cardItemTwo.current !== undefined) {
         return;
       }
     }
