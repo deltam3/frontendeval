@@ -86,7 +86,6 @@ const Game = ({ difficulty }: Props) => {
         cardItemOne.current = undefined;
         cardItemTwo.current = undefined;
         revealedCardsCount.current = 0;
-
         setGameItems(result);
       }
       if (
@@ -108,7 +107,7 @@ const Game = ({ difficulty }: Props) => {
         revealedCardsCount.current = 0;
         setGameItems(result);
       }
-    }, 2000);
+    }, 1000);
   });
 
   return (

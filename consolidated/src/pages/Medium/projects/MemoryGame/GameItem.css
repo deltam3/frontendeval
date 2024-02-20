@@ -5,7 +5,8 @@
 
   width: 4rem;
   height: 4rem;
-  /* background-color: #555; */
+
+  user-select: none;
 }
 
 .card-revealed-true {
