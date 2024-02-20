@@ -112,7 +112,7 @@ const Game = ({ difficulty }: Props) => {
   });
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center my-8">
       <div className={gameList}>
         {gameItems.map((gameItem) => {
           return (
