@@ -48,7 +48,7 @@ const MemoryPage = (props: Props) => {
       {showModal ? (
         modal
       ) : (
-        <div className="text-center">
+        <div className="text-center my-8">
           <Button onClick={handleStartButton} primary>
             Start Game
           </Button>
