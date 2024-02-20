@@ -6,7 +6,7 @@ import Game from "./Game";
 type Props = {};
 
 const MemoryPage = (props: Props) => {
-  const [difficulty, setDifficulty] = useState<boolean>(false);
+  const [difficulty, setDifficulty] = useState<number>(0);
   const [showModal, setShowModal] = useState<boolean>(false);
 
   const handleModalClose = () => {
@@ -25,15 +25,21 @@ const MemoryPage = (props: Props) => {
   const modal = (
     <Modal onClose={handleModalClose}>
       <section>
-        <div>
+        <div className="flex justify-center items-center flex-col gap-10">
           <div>
-            <Button onClick={() => handleDifficultySelect(4)}>Select 4</Button>
+            <Button onClick={() => handleDifficultySelect(4)}>
+              Select 4x4
+            </Button>
           </div>
           <div>
-            <Button onClick={() => handleDifficultySelect(6)}>Select 6</Button>
+            <Button onClick={() => handleDifficultySelect(6)}>
+              Select 6x6
+            </Button>
           </div>
           <div>
-            <Button onClick={() => handleDifficultySelect(8)}>Select 8</Button>
+            <Button onClick={() => handleDifficultySelect(8)}>
+              Select 8x8
+            </Button>
           </div>
         </div>
       </section>
@@ -54,7 +60,7 @@ const MemoryPage = (props: Props) => {
           </Button>
         </div>
       )}
-      {difficulty && <Game difficulty={difficulty}></Game>}
+      {difficulty > 0 && <Game difficulty={difficulty}></Game>}
     </section>
   );
 };
