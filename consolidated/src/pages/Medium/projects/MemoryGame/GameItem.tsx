@@ -44,6 +44,7 @@ const GameItem = ({
         revealedCardsCount.current = 2;
         setItems(result);
       }
+      // if the user clicks on the same card or another card during the animation, prevent any action
       if (cardItemTwo.current.number !== undefined) {
         return;
       }
