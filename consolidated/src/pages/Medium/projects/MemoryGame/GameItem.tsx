@@ -34,7 +34,6 @@ const GameItem = ({
       setItems(result);
     } else if (revealedCardsCount.current === 1) {
       if (cardItemTwo.current.number === undefined) {
-        console.log(revealedCardsCount);
         const result = items.map((item) => {
           if (item.id === thisId) {
             cardItemTwo.current = item;

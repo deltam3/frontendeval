@@ -20,7 +20,6 @@ const Game = ({ difficulty }: Props) => {
   let revealedCardsCount = useRef(0);
   const cardItemOne = useRef(undefined);
   const cardItemTwo = useRef(undefined);
-  // console.log(revealedCardsCount.current);
 
   let gameList;
   if (difficulty === 4) {
@@ -32,9 +31,9 @@ const Game = ({ difficulty }: Props) => {
   }
 
   useEffect(() => {
-    console.log(`revealedCardsCount: ${revealedCardsCount}`);
-    console.log(`cardItemOne: ${cardItemOne.current}`);
-    console.log(`cardItemTwo: ${cardItemTwo.current}`);
+    console.log(revealedCardsCount.current);
+    console.log(cardItemOne.current);
+    console.log(cardItemTwo.current);
   });
 
   // initial setup when the difficulty is set
