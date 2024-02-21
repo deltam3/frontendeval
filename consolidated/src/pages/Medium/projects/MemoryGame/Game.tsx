@@ -30,12 +30,6 @@ const Game = ({ difficulty }: Props) => {
     gameList = "gamelist-hard";
   }
 
-  useEffect(() => {
-    console.log(`revealedCardsCount: ${revealedCardsCount.current}`);
-    console.log(`cardItemOne: ${cardItemOne.current}`);
-    console.log(`cardItemTwo: ${cardItemTwo.current}`);
-  });
-
   // initial setup when the difficulty is set
   useEffect(() => {
     let result = [];
@@ -66,7 +60,7 @@ const Game = ({ difficulty }: Props) => {
 
     setGameItems(shuffle(result));
   }, []);
-  // runs whenever the component renders to check whether
+  // runs whenever the component renders to check whether we have a matching pair
   useEffect(() => {
     setTimeout(() => {
       if (
@@ -87,6 +81,7 @@ const Game = ({ difficulty }: Props) => {
         cardItemTwo.current = undefined;
         revealedCardsCount.current = 0;
         setGameItems(result);
+        checkGameFinished();
       }
       if (
         cardItemOne.current?.number !== undefined &&
