@@ -24,7 +24,7 @@ function Modal({ onClose, actionBar, children }: PropTypes) {
         <div>
           <Button onClick={onClose}>Close Modal</Button>
         </div>
-        <div className="flex flex-col justify-between h-full">
+        <div className="flex justify-center h-full">
           <div className="flex justify-center flex-col">
             <div>{children}</div>
             <div className="flex justify-center">{actionBar}</div>
