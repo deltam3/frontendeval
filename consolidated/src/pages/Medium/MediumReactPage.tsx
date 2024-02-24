@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { ProjectItemContainer } from "../../components/ProjectItemContainer";
 import MemoryPage from "./projects/MemoryGame/MemoryPage";
+import UndoableCounterPage from "./projects/UndoableCounter/UndoableCounterPage";
 
 type Props = {};
 
@@ -31,6 +32,9 @@ const MediumReactPage = (props: Props) => {
       </h1>
       <ProjectItemContainer>
         <MemoryPage></MemoryPage>
+      </ProjectItemContainer>
+      <ProjectItemContainer>
+        <UndoableCounterPage></UndoableCounterPage>
       </ProjectItemContainer>
     </div>
   );
